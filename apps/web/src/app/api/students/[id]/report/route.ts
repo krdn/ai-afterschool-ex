@@ -6,6 +6,7 @@ import { db } from '@/lib/db'
 import { getStudentReportPDF, fetchReportData } from '@/lib/db/counseling/reports'
 import { ConsultationReport } from '@/lib/pdf/templates/consultation-report'
 import { pdfToBuffer } from '@/lib/pdf/generator'
+import type { ConsultationReportData } from '@ais/report'
 import { createPDFStorage } from '@/lib/storage/factory'
 import { logger } from '@/lib/logger'
 import path from 'path'
@@ -112,7 +113,7 @@ export async function GET(
 
     // Render PDF to buffer
     const pdfBuffer = await pdfToBuffer(
-      React.createElement(ConsultationReport, reportData) as React.ReactElement<DocumentProps>
+      React.createElement(ConsultationReport, reportData as ConsultationReportData) as React.ReactElement<DocumentProps>
     )
 
     // Return PDF

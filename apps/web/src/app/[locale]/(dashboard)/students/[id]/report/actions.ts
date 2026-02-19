@@ -16,6 +16,7 @@ import {
 import { getPersonalitySummary } from '@/lib/db/student/personality-summary'
 import { ConsultationReport } from '@/lib/pdf/templates/consultation-report'
 import { pdfToBuffer, generateReportFilename } from '@/lib/pdf/generator'
+import type { ConsultationReportData } from '@ais/report'
 import { createPDFStorage } from '@/lib/storage/factory'
 import { revalidatePath } from 'next/cache'
 
@@ -89,7 +90,7 @@ export async function generateConsultationReport(studentId: string) {
 
       // Render PDF to buffer and upload
       const pdfBuffer = await pdfToBuffer(
-        React.createElement(ConsultationReport, reportData) as React.ReactElement<DocumentProps>
+        React.createElement(ConsultationReport, reportData as ConsultationReportData) as React.ReactElement<DocumentProps>
       )
       await storage.upload(filename, Buffer.from(pdfBuffer))
 
