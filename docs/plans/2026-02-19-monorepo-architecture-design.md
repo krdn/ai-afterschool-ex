@@ -510,3 +510,41 @@ Phase 10: AI 자동화 구축 (3-5일)
 | 채팅 | `apps/web` | 앱 레벨 유지 |
 | 이슈 추적 | `apps/web` | 앱 레벨 유지 |
 | 관리자 기능 | `apps/web` | 앱 레벨 유지 |
+
+---
+
+## 부록 B: 독립 GitHub 레포 미러링 전략
+
+### 레포 목록
+
+개발은 Monorepo에서 진행하되, 각 패키지를 독립 GitHub 레포로 자동 미러링합니다.
+
+| Monorepo 패키지 | 독립 레포 | 설명 |
+|-----------------|----------|------|
+| `packages/@ais/shared` | `krdn/ais-shared` | 공유 타입/유틸/Zod 스키마 |
+| `packages/@ais/db` | `krdn/ais-db` | Prisma 스키마 + 리포지토리 |
+| `packages/@ais/ui` | `krdn/ais-ui` | Radix UI 래퍼 + 복합 컴포넌트 |
+| `packages/@ais/analysis` | `krdn/ais-analysis` | 순수 분석 알고리즘 (사주, MBTI 등) |
+| `packages/@ais/ai-engine` | `krdn/ais-ai-engine` | 13+ LLM 어댑터 + 유니버설 라우터 |
+| `packages/@ais/matching` | `krdn/ais-matching` | 매칭 & 배치 최적화 |
+| `packages/@ais/counseling` | `krdn/ais-counseling` | 상담 관리 |
+| `packages/@ais/report` | `krdn/ais-report` | 보고서 PDF 생성 |
+
+### 미러링 메커니즘
+
+```yaml
+# .github/workflows/mirror-packages.yml
+# Monorepo에서 패키지가 변경되면 해당 독립 레포로 자동 push
+#
+# 1. 변경된 패키지 감지 (turbo --filter)
+# 2. git subtree split으로 패키지 히스토리 추출
+# 3. 독립 레포에 force push
+# 4. npm publish (선택, 태그 기반)
+```
+
+### 독립 레포 활용
+
+- **포트폴리오**: 각 레포에 독립 README, 데모, 기여 가이드
+- **재사용**: `npm install @ais/analysis` 또는 GitHub Packages
+- **이슈 추적**: 패키지별 독립 Issue 관리 가능
+- **Stars/Watch**: 패키지별 관심도 파악
