@@ -1,0 +1,33 @@
+{
+  "name": "@ais/web",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "echo 'lint placeholder'",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .next"
+  },
+  "dependencies": {
+    "@ais/shared": "workspace:*",
+    "@ais/db": "workspace:*",
+    "@ais/ai-engine": "workspace:*",
+    "@ais/analysis": "workspace:*",
+    "@ais/matching": "workspace:*",
+    "@ais/counseling": "workspace:*",
+    "@ais/report": "workspace:*",
+    "@ais/ui": "workspace:*",
+    "next": "^15",
+    "react": "^19",
+    "react-dom": "^19"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "@ais/ai-engine",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./dist/index.js"
+    },
+    "./adapters": {
+      "types": "./src/adapters/index.ts",
+      "import": "./dist/adapters/index.js"
+    },
+    "./router": {
+      "types": "./src/router/index.ts",
+      "import": "./dist/router/index.js"
+    },
+    "./prompts": {
+      "types": "./src/prompts/index.ts",
+      "import": "./dist/prompts/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "echo 'lint placeholder'",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@ais/shared": "workspace:*",
+    "@ais/db": "workspace:*"
+  },
+  "devDependencies": {
+    "tsup": "^8",
+    "typescript": "^5"
+  }
+}
