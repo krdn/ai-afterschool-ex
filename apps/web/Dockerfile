@@ -37,8 +37,9 @@ ENV NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME="dummy"
 COPY --from=deps /app/ .
 COPY --from=pruner /app/out/full/ .
 
-# Prisma client 생성
-RUN pnpm exec prisma generate --schema=apps/web/prisma/schema.prisma
+# Prisma client 생성 (packages/db + apps/web 모두 필요)
+RUN pnpm --filter @ais/db exec prisma generate && \
+    pnpm --filter @ais/web exec prisma generate
 
 # 전체 빌드 (Turborepo가 의존 패키지 먼저 빌드)
 RUN pnpm turbo build --filter=@ais/web
