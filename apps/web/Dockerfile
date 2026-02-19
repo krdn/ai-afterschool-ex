@@ -37,6 +37,9 @@ ENV NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME="dummy"
 COPY --from=deps /app/ .
 COPY --from=pruner /app/out/full/ .
 
+# turbo prune이 루트 tsconfig.base.json을 포함하지 않으므로 별도 복사
+COPY --from=pruner /app/tsconfig.base.json ./tsconfig.base.json
+
 # Prisma client 생성 (packages/db + apps/web 모두 필요)
 RUN pnpm --filter @ais/db exec prisma generate && \
     pnpm --filter @ais/web exec prisma generate
