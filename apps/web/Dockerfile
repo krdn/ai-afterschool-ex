@@ -48,7 +48,23 @@ RUN pnpm --filter @ais/db exec prisma generate && \
 RUN pnpm turbo build --filter=@ais/web
 
 # -----------------------------------------------------------------------------
-# 4. Production: standalone 출력만 복사
+# 4. Migrate: builder에서 prisma + 마이그레이션 파일만 추출
+#    prisma/config 모듈이 필요하므로 node_modules를 포함한 builder 기반
+# -----------------------------------------------------------------------------
+FROM base AS migrate
+WORKDIR /app
+
+COPY --from=builder /app/apps/web/prisma ./apps/web/prisma
+COPY --from=builder /app/apps/web/prisma.config.ts ./apps/web/prisma.config.ts
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/apps/web/node_modules ./apps/web/node_modules
+
+WORKDIR /app/apps/web
+
+CMD ["npx", "prisma", "migrate", "deploy"]
+
+# -----------------------------------------------------------------------------
+# 5. Production: standalone 출력만 복사
 # -----------------------------------------------------------------------------
 FROM node:24-alpine AS production
 WORKDIR /app
@@ -64,9 +80,8 @@ COPY --from=builder --chown=nextjs:nodejs /app/apps/web/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/apps/web/.next/static ./apps/web/.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/apps/web/public ./apps/web/public
 
-# Prisma 스키마 + 마이그레이션 + config (migrate deploy용)
+# Prisma 스키마 (런타임 Prisma Client용)
 COPY --from=builder --chown=nextjs:nodejs /app/apps/web/prisma ./apps/web/prisma
-COPY --from=builder --chown=nextjs:nodejs /app/apps/web/prisma.config.ts ./apps/web/prisma.config.ts
 
 USER nextjs
 

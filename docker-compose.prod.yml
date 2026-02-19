@@ -23,13 +23,10 @@ services:
     build:
       context: .
       dockerfile: apps/web/Dockerfile
-      target: production
-    image: ais-web:${VERSION:-latest}
+      target: migrate
     container_name: ais-migrate
     environment:
       DATABASE_URL: postgresql://${DATABASE_USER:-postgres}:${DATABASE_PASSWORD:-postgres}@postgres:5432/${DATABASE_DB:-ai_afterschool}?connection_limit=10
-    command: >
-      sh -c "cd apps/web && npx prisma migrate deploy && echo 'Migration complete'"
     depends_on:
       postgres:
         condition: service_healthy
