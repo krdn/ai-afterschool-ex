@@ -6,6 +6,8 @@ export default defineConfig({
     "src/types/index.ts",
     "src/utils/index.ts",
     "src/constants/index.ts",
+    "src/validations/index.ts",
+    "src/errors/index.ts",
   ],
   format: ["esm"],
   dts: true,

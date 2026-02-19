@@ -19,15 +19,21 @@
     "lint": "echo 'lint placeholder'",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist",
-    "db:generate": "echo 'Prisma generate - Phase 2'",
-    "db:push": "echo 'Prisma push - Phase 2'",
-    "db:seed": "echo 'Seed - Phase 2'"
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
-    "@ais/shared": "workspace:*"
+    "@ais/shared": "workspace:*",
+    "@prisma/client": "^7.4.0",
+    "@prisma/adapter-pg": "^7.3.0",
+    "pg": "^8.17.2"
   },
   "devDependencies": {
+    "prisma": "^7.4.0",
     "tsup": "^8",
-    "typescript": "^5"
+    "tsx": "^4",
+    "typescript": "^5",
+    "@types/pg": "^8.16.0"
   }
 }
