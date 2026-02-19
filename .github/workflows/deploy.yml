@@ -67,8 +67,12 @@ jobs:
             echo "=== Building Docker images ==="
             docker compose -f docker-compose.prod.yml build
 
+            echo "=== Starting database ==="
+            docker compose -f docker-compose.prod.yml up -d postgres
+            docker compose -f docker-compose.prod.yml exec postgres sh -c 'until pg_isready -U ${POSTGRES_USER:-postgres}; do sleep 1; done'
+
             echo "=== Running migrations ==="
-            docker compose -f docker-compose.prod.yml up migrate --abort-on-container-exit
+            docker compose -f docker-compose.prod.yml run --rm migrate
 
             echo "=== Deploying app ==="
             docker compose -f docker-compose.prod.yml up -d app
