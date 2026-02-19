@@ -1,0 +1,47 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "schedule:weekly",
+    ":semanticCommits",
+    "group:allNonMajor"
+  ],
+  "labels": ["dependencies", "automated"],
+  "rangeStrategy": "bump",
+  "packageRules": [
+    {
+      "description": "AI SDK 관련 패키지 그룹",
+      "matchPackagePatterns": ["^@ai-sdk/", "^ai$"],
+      "groupName": "ai-sdk",
+      "automerge": false
+    },
+    {
+      "description": "Prisma 관련 패키지 그룹",
+      "matchPackagePatterns": ["^@prisma/", "^prisma$"],
+      "groupName": "prisma",
+      "automerge": false
+    },
+    {
+      "description": "Next.js 관련",
+      "matchPackagePatterns": ["^next$", "^@next/"],
+      "groupName": "nextjs",
+      "automerge": false
+    },
+    {
+      "description": "devDependencies 자동 머지",
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "automerge": true,
+      "automergeType": "pr"
+    },
+    {
+      "description": "타입 패키지 자동 머지",
+      "matchPackagePatterns": ["^@types/"],
+      "automerge": true,
+      "automergeType": "pr"
+    }
+  ],
+  "ignoreDeps": [],
+  "prConcurrentLimit": 5,
+  "prHourlyLimit": 2
+}

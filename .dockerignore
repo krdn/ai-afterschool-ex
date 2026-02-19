@@ -1,0 +1,13 @@
+node_modules
+.next
+dist
+.turbo
+.git
+.gitignore
+.claude
+*.md
+!README.md
+coverage
+.env
+.env.*
+!.env.example
