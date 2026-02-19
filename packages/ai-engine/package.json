@@ -29,7 +29,8 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@ais/shared": "workspace:*"
+    "@ais/shared": "workspace:*",
+    "@ais/analysis": "workspace:*"
   },
   "peerDependencies": {
     "ai": ">=4",

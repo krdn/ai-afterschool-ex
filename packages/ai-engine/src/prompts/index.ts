@@ -11,9 +11,12 @@ export {
   getPromptDefinition as getSajuPromptDefinition,
   buildPromptFromTemplate as buildSajuPromptFromTemplate,
   getBuiltInSeedData as getSajuSeedData,
+  getPromptPreviewText as getSajuPromptPreviewText,
+  getTemplatePreviewText as getSajuTemplatePreviewText,
   type AnalysisPromptId,
   type AnalysisPromptMeta,
   type AnalysisPromptDefinition,
+  type StudentInfo as SajuStudentInfo,
 } from "./saju.js"
 
 export {
@@ -23,6 +26,7 @@ export {
   type MbtiPromptId,
   type MbtiPromptMeta,
   type MbtiPromptDefinition,
+  type StudentInfo as MbtiStudentInfo,
 } from "./mbti.js"
 
 export {
@@ -30,7 +34,9 @@ export {
   getFacePrompt,
   getBuiltInSeedData as getFaceSeedData,
   type FacePromptId,
+  type FacePromptMeta,
   type FacePromptDefinition,
+  type StudentInfo as FaceStudentInfo,
 } from "./face.js"
 
 export {
@@ -38,7 +44,9 @@ export {
   getPalmPrompt,
   getBuiltInSeedData as getPalmSeedData,
   type PalmPromptId,
+  type PalmPromptMeta,
   type PalmPromptDefinition,
+  type StudentInfo as PalmStudentInfo,
 } from "./palm.js"
 
 export {
