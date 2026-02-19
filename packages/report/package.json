@@ -18,10 +18,17 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@ais/shared": "workspace:*",
-    "@ais/db": "workspace:*"
+    "@ais/shared": "workspace:*"
+  },
+  "peerDependencies": {
+    "@react-pdf/renderer": ">=3",
+    "react": ">=18"
   },
   "devDependencies": {
+    "@react-pdf/renderer": "^4",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "react": "^19",
     "tsup": "^8",
     "typescript": "^5",
     "vitest": "^4"

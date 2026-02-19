@@ -18,9 +18,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@ais/shared": "workspace:*",
-    "@ais/db": "workspace:*",
-    "@ais/analysis": "workspace:*"
+    "@ais/shared": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8",

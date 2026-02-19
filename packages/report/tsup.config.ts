@@ -8,4 +8,8 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   outDir: "dist",
+  // JSX를 React.createElement로 변환
+  esbuildOptions(options) {
+    options.jsx = "automatic"
+  },
 });
