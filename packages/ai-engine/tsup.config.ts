@@ -13,4 +13,16 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   outDir: "dist",
+  external: [
+    "ai",
+    "@ai-sdk/openai",
+    "@ai-sdk/anthropic",
+    "@ai-sdk/google",
+    "@ai-sdk/deepseek",
+    "@ai-sdk/mistral",
+    "@ai-sdk/cohere",
+    "@ai-sdk/xai",
+    "@ai-sdk/openai-compatible",
+    "ollama-ai-provider-v2",
+  ],
 });

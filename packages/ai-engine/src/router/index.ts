@@ -1,2 +1,21 @@
-// Phase 5에서 유니버설 라우터가 이동됩니다
-export const ROUTER_PLACEHOLDER = true;
+export {
+  optimizeProviderOrder,
+  estimateCost,
+  type BudgetPeriod,
+  type BudgetAlert,
+  type RoutingResult,
+} from "./smart-routing.js"
+
+export {
+  withFailover,
+  createFailoverExecutor,
+  isRetryableError,
+  logProviderError,
+  logFailoverChain,
+  logFailoverSuccess,
+  FailoverError,
+  type FailoverContext,
+  type FailoverResult,
+  type ProviderError,
+  type TrackFailureFn,
+} from "./failover.js"
