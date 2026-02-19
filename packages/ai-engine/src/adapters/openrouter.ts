@@ -43,7 +43,7 @@ export class OpenRouterAdapter extends BaseAdapter {
     const result = await generateText({
       model: options.model,
       ...(options.messages ? { messages: options.messages } : { prompt: options.prompt || "" }),
-      system: options.system, maxTokens: options.maxTokens, temperature: options.temperature, topP: options.topP,
+      system: options.system, maxOutputTokens: options.maxOutputTokens, temperature: options.temperature, topP: options.topP,
     })
     return { text: result.text, usage: result.usage }
   }
@@ -52,7 +52,7 @@ export class OpenRouterAdapter extends BaseAdapter {
     const result = streamText({
       model: options.model,
       ...(options.messages ? { messages: options.messages } : { prompt: options.prompt || "" }),
-      system: options.system, maxTokens: options.maxTokens, temperature: options.temperature, topP: options.topP,
+      system: options.system, maxOutputTokens: options.maxOutputTokens, temperature: options.temperature, topP: options.topP,
     })
     return { stream: result.textStream, provider: this.providerType, model: "unknown" }
   }
@@ -140,7 +140,7 @@ export class OpenRouterAdapter extends BaseAdapter {
   }
 
   normalizeParams(params?: ModelParams): Record<string, unknown> {
-    return { temperature: params?.temperature ?? 0.7, max_tokens: params?.maxTokens, top_p: params?.topP }
+    return { temperature: params?.temperature ?? 0.7, max_tokens: params?.maxOutputTokens, top_p: params?.topP }
   }
 
   setApiKey(apiKey: string): void { this.apiKey = apiKey }

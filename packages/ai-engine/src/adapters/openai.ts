@@ -47,7 +47,7 @@ export class OpenAIAdapter extends BaseAdapter {
         ? { messages: options.messages }
         : { prompt: options.prompt || "" }),
       system: options.system,
-      maxTokens: options.maxTokens,
+      maxOutputTokens: options.maxOutputTokens,
       temperature: options.temperature,
       topP: options.topP,
     })
@@ -61,7 +61,7 @@ export class OpenAIAdapter extends BaseAdapter {
         ? { messages: options.messages }
         : { prompt: options.prompt || "" }),
       system: options.system,
-      maxTokens: options.maxTokens,
+      maxOutputTokens: options.maxOutputTokens,
       temperature: options.temperature,
       topP: options.topP,
     })
@@ -76,7 +76,7 @@ export class OpenAIAdapter extends BaseAdapter {
       if (!apiKey) return { isValid: false, error: "API 키가 설정되지 않았습니다." }
 
       const testModel = this.createModel("gpt-4o-mini", config)
-      await generateText({ model: testModel, prompt: "Hello", maxTokens: 1 })
+      await generateText({ model: testModel, prompt: "Hello", maxOutputTokens: 1 })
       return { isValid: true }
     } catch (error) {
       return { isValid: false, error: this.handleError(error, "validation").message }
@@ -95,7 +95,7 @@ export class OpenAIAdapter extends BaseAdapter {
   normalizeParams(params?: ModelParams): Record<string, unknown> {
     return {
       temperature: params?.temperature ?? 0.7,
-      max_tokens: params?.maxTokens,
+      max_tokens: params?.maxOutputTokens,
       top_p: params?.topP,
       frequency_penalty: params?.frequencyPenalty,
       presence_penalty: params?.presencePenalty,

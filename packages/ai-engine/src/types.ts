@@ -5,7 +5,7 @@
  * apps/web에서 Prisma 모델과 매핑하여 사용합니다.
  */
 
-import type { LanguageModel, LanguageModelUsage, CoreMessage } from "ai"
+import type { LanguageModel, LanguageModelUsage, ModelMessage } from "ai"
 
 // =============================================================================
 // 기본 타입 (Enums)
@@ -134,7 +134,7 @@ export interface ModelInput {
 
 export interface ModelParams {
   temperature?: number
-  maxTokens?: number
+  maxOutputTokens?: number
   topP?: number
   frequencyPenalty?: number
   presencePenalty?: number
@@ -169,14 +169,14 @@ export interface ResolutionResult {
 // 어댑터 관련 타입
 // =============================================================================
 
-export type { LanguageModel, LanguageModelUsage, CoreMessage }
+export type { LanguageModel, LanguageModelUsage, ModelMessage }
 
 export interface GenerateOptions {
   model: LanguageModel
-  messages?: CoreMessage[]
+  messages?: ModelMessage[]
   prompt?: string
   system?: string
-  maxTokens?: number
+  maxOutputTokens?: number
   temperature?: number
   topP?: number
   [key: string]: unknown

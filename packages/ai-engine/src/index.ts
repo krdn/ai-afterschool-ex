@@ -23,7 +23,7 @@ export type {
   StreamResult,
   LanguageModel,
   LanguageModelUsage,
-  CoreMessage,
+  ModelMessage,
 } from "./types.js"
 
 export {

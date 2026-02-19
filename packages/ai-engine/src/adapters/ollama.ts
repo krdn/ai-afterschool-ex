@@ -35,7 +35,7 @@ export class OllamaAdapter extends BaseAdapter {
         ? { messages: options.messages }
         : { prompt: options.prompt || "" }),
       system: options.system,
-      maxTokens: options.maxTokens,
+      maxOutputTokens: options.maxOutputTokens,
       temperature: options.temperature,
       topP: options.topP,
     })
@@ -49,7 +49,7 @@ export class OllamaAdapter extends BaseAdapter {
         ? { messages: options.messages }
         : { prompt: options.prompt || "" }),
       system: options.system,
-      maxTokens: options.maxTokens,
+      maxOutputTokens: options.maxOutputTokens,
       temperature: options.temperature,
       topP: options.topP,
     })
@@ -225,7 +225,7 @@ export class OllamaAdapter extends BaseAdapter {
   }
 
   normalizeParams(params?: ModelParams): Record<string, unknown> {
-    return { temperature: params?.temperature ?? 0.7, num_predict: params?.maxTokens, top_p: params?.topP }
+    return { temperature: params?.temperature ?? 0.7, num_predict: params?.maxOutputTokens, top_p: params?.topP }
   }
 
   setApiKey(apiKey: string): void { this.apiKey = apiKey }

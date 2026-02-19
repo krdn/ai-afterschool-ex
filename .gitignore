@@ -37,5 +37,8 @@ pnpm-debug.log*
 packages/db/prisma/*.db
 packages/db/prisma/*.db-journal
 
+# Claude Code
+.claude/
+
 # Misc
 *.tsbuildinfo

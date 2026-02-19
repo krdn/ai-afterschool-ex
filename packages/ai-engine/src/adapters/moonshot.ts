@@ -38,7 +38,7 @@ export class MoonshotAdapter extends BaseAdapter {
     const result = await generateText({
       model: options.model,
       ...(options.messages ? { messages: options.messages } : { prompt: options.prompt || "" }),
-      system: options.system, maxTokens: options.maxTokens, temperature: options.temperature, topP: options.topP,
+      system: options.system, maxOutputTokens: options.maxOutputTokens, temperature: options.temperature, topP: options.topP,
     })
     return { text: result.text, usage: result.usage }
   }
@@ -54,7 +54,7 @@ export class MoonshotAdapter extends BaseAdapter {
         : this.apiKey
       if (!apiKey) return { isValid: false, error: "API 키가 설정되지 않았습니다." }
       const testModel = this.createModel("kimi-latest", config)
-      await generateText({ model: testModel, prompt: "Hello", maxTokens: 10 })
+      await generateText({ model: testModel, prompt: "Hello", maxOutputTokens: 10 })
       return { isValid: true }
     } catch (error) {
       const msg = error instanceof Error ? error.message : String(error)

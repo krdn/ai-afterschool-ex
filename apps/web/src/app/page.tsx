@@ -1,10 +1,5 @@
-import { PACKAGE_NAME } from "@ais/shared";
+import { redirect } from "next/navigation"
 
 export default function Home() {
-  return (
-    <main>
-      <h1>AI AfterSchool</h1>
-      <p>Monorepo 구축 완료 - shared 패키지 연결: {PACKAGE_NAME}</p>
-    </main>
-  );
+  redirect("/auth/login")
 }
