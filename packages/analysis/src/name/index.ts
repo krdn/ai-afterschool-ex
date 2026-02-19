@@ -1,2 +1,19 @@
-// Phase 4에서 원본 분석 알고리즘이 이동됩니다
-export const NAME_PLACEHOLDER = true;
+export {
+  calculateNameNumerology,
+  generateNameInterpretation,
+  splitKoreanName,
+  type NameNumerologyResult,
+  type NameNumerologyOutcome,
+} from "./name-numerology.js"
+
+export {
+  getStrokeCount,
+  getStrokeInfo,
+  getHanjaCandidates,
+  normalizeHanjaSelections,
+  coerceHanjaSelections,
+  selectionsToHanjaName,
+  type HanjaSelection,
+  type HanjaCandidate,
+  type StrokeResult,
+} from "./hanja-strokes.js"

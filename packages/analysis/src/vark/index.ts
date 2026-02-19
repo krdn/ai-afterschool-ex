@@ -1,2 +1,9 @@
-// Phase 4에서 원본 분석 알고리즘이 이동됩니다
-export const VARK_PLACEHOLDER = true;
+export {
+  calculateProgress as calculateVarkProgress,
+  scoreVark,
+  determineVarkType,
+  type VarkQuestion,
+  type VarkScores,
+  type VarkPercentages,
+  type VarkResult,
+} from "./vark-scoring.js"
