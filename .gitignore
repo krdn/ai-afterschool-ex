@@ -14,6 +14,7 @@ out/
 .env
 .env.*
 !.env.example
+!.env.test.example
 
 # IDE
 .vscode/*
@@ -27,6 +28,9 @@ Thumbs.db
 
 # Testing
 coverage/
+**/playwright-report/
+**/test-results/
+**/.auth/*.json
 
 # Debug
 *.log
