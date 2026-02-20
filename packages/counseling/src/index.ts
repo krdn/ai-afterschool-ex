@@ -25,3 +25,5 @@ export {
   getCounselingTypeLabel,
   getReservationStatusLabel,
 } from "./stats.js"
+
+export * from "./repositories/index.js"

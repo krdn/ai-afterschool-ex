@@ -10,7 +10,7 @@ import {
   type Assignment,
   type AutoAssignmentOptions,
 } from "@/lib/optimization/auto-assignment"
-import { fetchSubjectAnalyses, fetchBatchAnalyses } from "@/lib/db/matching/fetch-analysis"
+import { fetchSubjectAnalyses, fetchBatchAnalyses } from '@ais/matching'
 import { ok, okVoid, fail, type ActionResult, type ActionVoidResult } from "@/lib/errors/action-result"
 /** 선생님 추천 항목 */
 export interface TeacherRecommendation {

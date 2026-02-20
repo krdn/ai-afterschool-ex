@@ -11,13 +11,13 @@ import {
 } from "@ais/analysis"
 import { coerceHanjaSelections, selectionsToHanjaName } from "@ais/analysis"
 import { scoreMbti } from "@ais/analysis"
-import { upsertSajuAnalysis, upsertNameAnalysis } from "@/lib/db/student/analysis"
-import { createTeacherSajuHistory } from "@/lib/db/teacher/analysis"
-import { upsertMbtiAnalysisGeneric, getMbtiAnalysisGeneric } from "@/lib/db/student/mbti-analysis"
-import { getNameAnalysis } from "@/lib/db/student/name-analysis"
+import { upsertSajuAnalysis, upsertNameAnalysis } from '@ais/analysis'
+import { createTeacherSajuHistory } from '@ais/analysis'
+import { upsertMbtiAnalysisGeneric, getMbtiAnalysisGeneric } from '@ais/analysis'
+import { getNameAnalysis } from '@ais/analysis'
 import { generateWithProvider, generateWithSpecificProvider } from '@ais/ai-engine'
 import { MBTI_INTERPRETATION_PROMPT, getMbtiPrompt, type MbtiPromptId, getNamePrompt, type NamePromptId, getSajuPromptDefinition as getPromptDefinition, type AnalysisPromptId } from "@ais/ai-engine/prompts"
-import { getPresetByKey } from "@/lib/db/analysis/saju-prompt-preset"
+import { getSajuPresetByKey } from '@ais/analysis'
 import type { ProviderName } from '@ais/ai-engine'
 import { eventBus } from "@/lib/events/event-bus"
 import { ok, fail, type ActionResult } from "@/lib/errors/action-result"
@@ -153,7 +153,7 @@ export async function runTeacherSajuAnalysis(
         : '미상'
 
       // DB 프리셋 우선, 없으면 코드 기본값 사용
-      const dbPreset = await getPresetByKey(resolvedPromptId)
+      const dbPreset = await getSajuPresetByKey(resolvedPromptId)
       let prompt: string
       const teacherInfo = {
         birthDate: birthDateStr,

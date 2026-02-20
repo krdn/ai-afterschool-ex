@@ -28,7 +28,7 @@ import { join } from 'path'
 
 // AI 프롬프트 관리 (통합)
 import { AnalysisPromptsTab } from '@/components/admin/tabs/analysis-prompts-tab'
-import { getAllPresetsByType, seedBuiltInPresets, type AnalysisType } from '@/lib/db/analysis/prompt-preset'
+import { getAllGeneralPresetsByType, seedGeneralPresets, type AnalysisType } from '@ais/analysis'
 import {
   getSajuSeedData,
   getFaceSeedData,
@@ -288,23 +288,23 @@ export default async function AdminPage() {
 
   // AI 프롬프트 seed 및 조회
   await Promise.all([
-    seedBuiltInPresets(getSajuSeedData()),
-    seedBuiltInPresets(getFaceSeedData()),
-    seedBuiltInPresets(getPalmSeedData()),
-    seedBuiltInPresets(getMbtiSeedData()),
-    seedBuiltInPresets(getVarkSeedData()),
-    seedBuiltInPresets(getNameSeedData()),
-    seedBuiltInPresets(getZodiacSeedData()),
+    seedGeneralPresets(getSajuSeedData()),
+    seedGeneralPresets(getFaceSeedData()),
+    seedGeneralPresets(getPalmSeedData()),
+    seedGeneralPresets(getMbtiSeedData()),
+    seedGeneralPresets(getVarkSeedData()),
+    seedGeneralPresets(getNameSeedData()),
+    seedGeneralPresets(getZodiacSeedData()),
   ])
 
   const analysisPromptPresets = {
-    saju: await getAllPresetsByType('saju'),
-    face: await getAllPresetsByType('face'),
-    palm: await getAllPresetsByType('palm'),
-    mbti: await getAllPresetsByType('mbti'),
-    vark: await getAllPresetsByType('vark'),
-    name: await getAllPresetsByType('name'),
-    zodiac: await getAllPresetsByType('zodiac'),
+    saju: await getAllGeneralPresetsByType('saju'),
+    face: await getAllGeneralPresetsByType('face'),
+    palm: await getAllGeneralPresetsByType('palm'),
+    mbti: await getAllGeneralPresetsByType('mbti'),
+    vark: await getAllGeneralPresetsByType('vark'),
+    name: await getAllGeneralPresetsByType('name'),
+    zodiac: await getAllGeneralPresetsByType('zodiac'),
   }
 
   // Health 데이터 직접 수집 (self-referencing fetch 방지)

@@ -4,8 +4,8 @@ import { revalidatePath } from "next/cache"
 import { z } from "zod"
 import { verifySession } from "@/lib/dal"
 import { db } from "@ais/db/client"
-import { getUnifiedPersonalityData, upsertPersonalitySummary } from "@/lib/db/student/personality-summary"
-import { getCompatibilityResult } from "@/lib/db/matching/compatibility-result"
+import { getUnifiedPersonalityData, upsertPersonalitySummary } from '@ais/analysis'
+import { getCompatibilityResult } from '@ais/matching'
 import { generateWithProvider, FailoverError } from '@ais/ai-engine'
 import { buildCounselingSummaryPrompt, buildPersonalitySummaryPrompt } from "@ais/ai-engine/prompts"
 import { ok, fail, okVoid, type ActionResult, type ActionVoidResult } from "@/lib/errors/action-result"

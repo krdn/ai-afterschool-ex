@@ -2,11 +2,11 @@
 
 import { verifySession } from "@/lib/dal"
 import {
-  getAllPresets,
-  createPreset,
-  updatePreset,
-  deletePreset,
-} from "@/lib/db/analysis/saju-prompt-preset"
+  getAllSajuPresets,
+  createSajuPreset,
+  updateSajuPreset,
+  deleteSajuPreset,
+} from '@ais/analysis'
 import {
   CreateSajuPresetSchema,
   UpdateSajuPresetSchema,
@@ -23,7 +23,7 @@ async function requireAdmin() {
 
 export async function getPresetsAction() {
   await requireAdmin()
-  return getAllPresets()
+  return getAllSajuPresets()
 }
 
 export async function createPresetAction(input: unknown) {
@@ -32,7 +32,7 @@ export async function createPresetAction(input: unknown) {
   if (!parsed.success) {
     throw new Error(parsed.error.issues.map((e) => e.message).join(", "))
   }
-  return createPreset(parsed.data)
+  return createSajuPreset(parsed.data)
 }
 
 export async function updatePresetAction(id: unknown, input: unknown) {
@@ -45,7 +45,7 @@ export async function updatePresetAction(id: unknown, input: unknown) {
   if (!parsed.success) {
     throw new Error(parsed.error.issues.map((e) => e.message).join(", "))
   }
-  return updatePreset(parsedId.data, parsed.data)
+  return updateSajuPreset(parsedId.data, parsed.data)
 }
 
 export async function deletePresetAction(id: unknown) {
@@ -54,5 +54,5 @@ export async function deletePresetAction(id: unknown) {
   if (!parsedId.success) {
     throw new Error("유효하지 않은 ID입니다.")
   }
-  await deletePreset(parsedId.data)
+  await deleteSajuPreset(parsedId.data)
 }

@@ -1,4 +1,3 @@
-import 'server-only'
 import { Prisma } from '@ais/db'
 import { db } from '@ais/db/client'
 import { ReservationStatus, CounselingType } from '@ais/db'

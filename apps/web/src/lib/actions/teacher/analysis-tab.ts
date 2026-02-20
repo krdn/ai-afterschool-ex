@@ -1,13 +1,13 @@
 'use server'
 
 import { db } from "@ais/db/client"
-import { getFaceAnalysis } from "@/lib/db/analysis/face-analysis"
-import { getPalmAnalysis } from "@/lib/db/analysis/palm-analysis"
-import { getMbtiAnalysisGeneric } from "@/lib/db/student/mbti-analysis"
-import { getNameAnalysis } from "@/lib/db/student/name-analysis"
-import { getSajuAnalysis } from "@/lib/db/student/analysis"
+import { getFaceAnalysis } from '@ais/analysis'
+import { getPalmAnalysis } from '@ais/analysis'
+import { getMbtiAnalysisGeneric } from '@ais/analysis'
+import { getNameAnalysis } from '@ais/analysis'
+import { getSajuAnalysis } from '@ais/analysis'
 import { getEnabledProviders, getEnabledProvidersWithVision } from '@ais/ai-engine'
-import { getActivePresetsByType } from "@/lib/db/analysis/prompt-preset"
+import { getActiveGeneralPresetsByType } from '@ais/analysis'
 import type { ProviderName } from '@ais/ai-engine'
 
 export type PromptOption = {
@@ -81,17 +81,17 @@ export async function getTeacherAnalysisData(teacherId: string): Promise<Teacher
       }),
       getEnabledProviders().catch(() => [] as ProviderName[]),
       getEnabledProvidersWithVision().catch(() => []),
-      getActivePresetsByType("face").catch(() => []),
-      getActivePresetsByType("palm").catch(() => []),
-      getActivePresetsByType("mbti").catch(() => []),
-      getActivePresetsByType("name").catch(() => []),
+      getActiveGeneralPresetsByType("face").catch(() => []),
+      getActiveGeneralPresetsByType("palm").catch(() => []),
+      getActiveGeneralPresetsByType("mbti").catch(() => []),
+      getActiveGeneralPresetsByType("name").catch(() => []),
     ])
 
     const visionProviders = providersWithVision
       .filter(p => p.hasVisionModel)
       .map(p => p.name)
 
-    const toPromptOptions = (presets: Awaited<ReturnType<typeof getActivePresetsByType>>): PromptOption[] =>
+    const toPromptOptions = (presets: Awaited<ReturnType<typeof getActiveGeneralPresetsByType>>): PromptOption[] =>
       presets.map(p => ({
         id: p.promptKey,
         name: p.name,

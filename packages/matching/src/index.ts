@@ -53,3 +53,5 @@ export type {
   StudentCandidate,
   CompatibilityScoreFn,
 } from "./auto-assignment.js"
+
+export * from "./repositories/index.js"

@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache"
 import { db } from "@ais/db/client"
 import { verifySession } from "@/lib/dal"
 import { getZodiacSign } from "@ais/analysis"
-import { getZodiacAnalysis as getZodiacAnalysisDb, upsertZodiacAnalysis } from "@/lib/db/student/zodiac-analysis"
+import { getZodiacAnalysis as getZodiacAnalysisDb, upsertZodiacAnalysis } from '@ais/analysis'
 import { eventBus } from "@/lib/events/event-bus"
 import { generateWithProvider, generateWithSpecificProvider } from '@ais/ai-engine'
 import { getZodiacPrompt, type ZodiacPromptId } from "@ais/ai-engine/prompts"

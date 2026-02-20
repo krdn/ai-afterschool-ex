@@ -7,8 +7,8 @@ import { FACE_READING_PROMPT, PALM_READING_PROMPT, getFacePrompt, type FacePromp
 import { verifySession } from "@/lib/dal"
 import { db } from "@ais/db/client"
 import { extractJsonFromLLM } from "@ais/shared"
-import { upsertFaceAnalysis } from "@/lib/db/analysis/face-analysis"
-import { upsertPalmAnalysis } from "@/lib/db/analysis/palm-analysis"
+import { upsertFaceAnalysis } from '@ais/analysis'
+import { upsertPalmAnalysis } from '@ais/analysis'
 import type { ProviderName } from '@ais/ai-engine'
 import { eventBus } from "@/lib/events/event-bus"
 import { ok, fail, type ActionResult } from "@/lib/errors/action-result"

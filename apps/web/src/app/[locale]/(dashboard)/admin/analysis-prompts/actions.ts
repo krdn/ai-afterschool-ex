@@ -3,12 +3,12 @@
 import { verifySession } from "@/lib/dal"
 import { redirect } from "next/navigation"
 import {
-  getAllPresetsByType,
-  createPreset,
-  updatePreset,
-  deletePreset,
+  getAllGeneralPresetsByType,
+  createGeneralPreset,
+  updateGeneralPreset,
+  deleteGeneralPreset,
   type AnalysisPromptPresetData,
-} from "@/lib/db/analysis/prompt-preset"
+} from '@ais/analysis'
 import {
   AnalysisTypeSchema,
   CreatePresetSchema,
@@ -44,7 +44,7 @@ export async function getPresetsByTypeAction(
   if (!parsed.success) {
     throw new Error("유효하지 않은 분석 유형입니다.")
   }
-  return getAllPresetsByType(parsed.data)
+  return getAllGeneralPresetsByType(parsed.data)
 }
 
 /** 프리셋 생성 */
@@ -56,7 +56,7 @@ export async function createPresetAction(
   if (!parsed.success) {
     throw new Error(parsed.error.issues.map((e) => e.message).join(", "))
   }
-  return createPreset(parsed.data)
+  return createGeneralPreset(parsed.data)
 }
 
 /** 프리셋 수정 */
@@ -73,7 +73,7 @@ export async function updatePresetAction(
   if (!parsed.success) {
     throw new Error(parsed.error.issues.map((e) => e.message).join(", "))
   }
-  return updatePreset(parsedId.data, parsed.data)
+  return updateGeneralPreset(parsedId.data, parsed.data)
 }
 
 /** 프리셋 삭제 */
@@ -83,5 +83,5 @@ export async function deletePresetAction(id: unknown): Promise<void> {
   if (!parsedId.success) {
     throw new Error("유효하지 않은 ID입니다.")
   }
-  return deletePreset(parsedId.data)
+  return deleteGeneralPreset(parsedId.data)
 }

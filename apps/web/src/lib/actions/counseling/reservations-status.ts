@@ -3,10 +3,11 @@
 import { revalidatePath } from 'next/cache'
 import { verifySession } from '@/lib/dal'
 import { getRBACPrisma } from '@/lib/db/common/rbac'
-import {
+import { reservationsRepo } from '@ais/counseling';
+const { 
   deleteReservation,
   transitionReservationStatus,
-} from '@/lib/db/counseling/reservations'
+ } = reservationsRepo;
 import { ReservationStatus } from '@ais/db'
 import {
   reservationDeleteSchema,

@@ -1,6 +1,6 @@
 import { Briefcase, Sparkles, AlertCircle } from "lucide-react"
 import { format } from "date-fns"
-import { getPersonalitySummary } from "@/lib/db/student/personality-summary"
+import { getPersonalitySummary } from '@ais/analysis'
 import { generateCareerGuidance } from "@/lib/actions/student/personality-integration"
 import { CareerGuidanceRetryButton } from "./career-guidance-retry-button"
 import type { PersonalitySummary } from '@ais/db'

@@ -1,6 +1,6 @@
 import { verifySession } from "@/lib/dal"
 import { db } from "@ais/db/client"
-import { listAssignmentProposals } from "@/lib/db/matching/assignment"
+import { listAssignmentProposals } from '@ais/matching'
 import { getAssignmentResults } from "@/lib/actions/matching/assignment-results"
 import { AutoAssignmentSuggestion } from "@/components/assignment/auto-assignment-suggestion"
 import { AssignmentResultCard } from "@/components/matching/AssignmentResultCard"

@@ -10,7 +10,7 @@ import {
   getVarkDraft as getVarkDraftDb,
   upsertVarkAnalysis,
   upsertVarkDraft,
-} from "@/lib/db/student/vark-analysis"
+} from '@ais/analysis'
 import { generateWithProvider, generateWithSpecificProvider } from '@ais/ai-engine'
 import { getVarkPrompt, type VarkPromptId } from "@ais/ai-engine/prompts"
 import type { ProviderName } from '@ais/ai-engine'

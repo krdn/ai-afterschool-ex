@@ -1,15 +1,15 @@
 'use server'
 
 import { db } from "@ais/db/client"
-import { getFaceAnalysisByStudentId } from "@/lib/db/analysis/face-analysis"
-import { getPalmAnalysisByStudentId } from "@/lib/db/analysis/palm-analysis"
-import { getMbtiAnalysis } from "@/lib/db/student/mbti-analysis"
-import { getVarkAnalysis } from "@/lib/db/student/vark-analysis"
-import { getNameAnalysisByStudentId } from "@/lib/db/student/name-analysis"
-import { getZodiacAnalysis } from "@/lib/db/student/zodiac-analysis"
-import { getSajuAnalysis } from "@/lib/db/student/analysis"
+import { getFaceAnalysisByStudentId } from '@ais/analysis'
+import { getPalmAnalysisByStudentId } from '@ais/analysis'
+import { getMbtiAnalysis } from '@ais/analysis'
+import { getVarkAnalysis } from '@ais/analysis'
+import { getNameAnalysisByStudentId } from '@ais/analysis'
+import { getZodiacAnalysis } from '@ais/analysis'
+import { getSajuAnalysis } from '@ais/analysis'
 import { getEnabledProviders, getEnabledProvidersWithVision } from '@ais/ai-engine'
-import { getActivePresetsByType } from "@/lib/db/analysis/prompt-preset"
+import { getActiveGeneralPresetsByType } from '@ais/analysis'
 import type { ProviderName } from '@ais/ai-engine'
 
 export type PromptOption = {
@@ -108,19 +108,19 @@ export async function getStudentAnalysisData(studentId: string): Promise<Student
       }),
       getEnabledProviders().catch(() => [] as ProviderName[]),
       getEnabledProvidersWithVision().catch(() => []),
-      getActivePresetsByType("face").catch(() => []),
-      getActivePresetsByType("palm").catch(() => []),
-      getActivePresetsByType("mbti").catch(() => []),
-      getActivePresetsByType("vark").catch(() => []),
-      getActivePresetsByType("name").catch(() => []),
-      getActivePresetsByType("zodiac").catch(() => []),
+      getActiveGeneralPresetsByType("face").catch(() => []),
+      getActiveGeneralPresetsByType("palm").catch(() => []),
+      getActiveGeneralPresetsByType("mbti").catch(() => []),
+      getActiveGeneralPresetsByType("vark").catch(() => []),
+      getActiveGeneralPresetsByType("name").catch(() => []),
+      getActiveGeneralPresetsByType("zodiac").catch(() => []),
     ])
 
     const visionProviders = providersWithVision
       .filter(p => p.hasVisionModel)
       .map(p => p.name)
 
-    const toPromptOptions = (presets: Awaited<ReturnType<typeof getActivePresetsByType>>): PromptOption[] =>
+    const toPromptOptions = (presets: Awaited<ReturnType<typeof getActiveGeneralPresetsByType>>): PromptOption[] =>
       presets.map(p => ({
         id: p.promptKey,
         name: p.name,

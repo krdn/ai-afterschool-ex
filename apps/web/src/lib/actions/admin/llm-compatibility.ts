@@ -10,7 +10,7 @@ import {
   type CompatibilityTeacherData as TeacherData,
 } from "@ais/ai-engine/prompts"
 import type { TeacherRecommendation } from "@/lib/actions/matching/assignment"
-import { fetchSubjectAnalyses, fetchBatchAnalyses } from "@/lib/db/matching/fetch-analysis"
+import { fetchSubjectAnalyses, fetchBatchAnalyses } from '@ais/matching'
 
 // ---------------------------------------------------------------------------
 // LLM 응답 파싱

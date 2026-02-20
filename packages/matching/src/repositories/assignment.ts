@@ -6,7 +6,7 @@
 
 import { Prisma } from '@ais/db'
 import { db } from "@ais/db/client"
-import type { Assignment } from "@/lib/optimization/auto-assignment"
+import type { DetailedAssignment as Assignment } from "../types.js"
 import type { CompatibilityScore } from "@ais/analysis"
 
 /**

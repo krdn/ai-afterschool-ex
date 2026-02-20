@@ -5,3 +5,4 @@ export * from "./vark/index.js";
 export * from "./zodiac/index.js";
 export * from "./compatibility/index.js";
 export * from "./integration/index.js";
+export * from "./repositories/index.js";

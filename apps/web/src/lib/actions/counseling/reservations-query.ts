@@ -2,11 +2,12 @@
 
 import { db } from '@ais/db/client'
 import { verifySession } from '@/lib/dal'
-import {
+import type { GetReservationsParams } from '@ais/counseling';
+import { reservationsRepo } from '@ais/counseling';
+const {
   getReservations,
-  getReservationById,
-  type GetReservationsParams,
-} from '@/lib/db/counseling/reservations'
+  getReservationById
+} = reservationsRepo;
 import { ReservationStatus } from '@ais/db'
 import { ok, fail, type ActionResult } from '@/lib/errors/action-result'
 

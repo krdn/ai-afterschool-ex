@@ -2,8 +2,8 @@
 
 import { runSajuAnalysis, simplifyInterpretation } from "@/lib/actions/student/calculation-analysis"
 import { getAnalysisHistory } from "@/lib/actions/student/analysis"
-import { getSajuHistoryList } from "@/lib/db/student/analysis"
-import { getActivePresets, getPresetByKey, seedBuiltInPresets } from "@/lib/db/analysis/saju-prompt-preset"
+import { getSajuHistoryList } from '@ais/analysis'
+import { getActiveSajuPresets, getSajuPresetByKey, seedSajuPresets } from '@ais/analysis'
 import {
   getSajuSeedData as getBuiltInSeedData,
   getSajuPromptPreviewText as getPromptPreviewText,
@@ -28,9 +28,9 @@ export async function getSajuAnalysisHistoryAction(studentId: string) {
 /** DB 기반 프롬프트 옵션 목록 (누락 시 자동 seed) */
 export async function getMergedPromptOptionsAction(): Promise<AnalysisPromptMeta[]> {
   // DB에 기본 프롬프트가 없으면 자동 seed
-  await seedBuiltInPresets(getBuiltInSeedData())
+  await seedSajuPresets(getBuiltInSeedData())
 
-  const dbPresets = await getActivePresets()
+  const dbPresets = await getActiveSajuPresets()
 
   return dbPresets.map((p) => ({
     id: p.promptKey as AnalysisPromptMeta["id"],
@@ -46,7 +46,7 @@ export async function getMergedPromptOptionsAction(): Promise<AnalysisPromptMeta
 
 /** DB에 저장된 프롬프트 원문 반환 (플레이스홀더 치환 없이) */
 export async function getPromptPreviewAction(promptKey: string): Promise<string> {
-  const preset = await getPresetByKey(promptKey)
+  const preset = await getSajuPresetByKey(promptKey)
   if (preset?.promptTemplate) {
     return preset.promptTemplate
   }

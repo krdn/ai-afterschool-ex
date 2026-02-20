@@ -3,7 +3,8 @@ import type { DocumentProps } from '@react-pdf/renderer'
 import { NextRequest, NextResponse } from 'next/server'
 import { verifySession } from '@/lib/dal'
 import { db } from '@ais/db/client'
-import { getStudentReportPDF, fetchReportData } from '@/lib/db/counseling/reports'
+import { counselingReportsRepo } from '@ais/counseling';
+const {  getStudentReportPDF, fetchReportData  } = counselingReportsRepo;
 import { ConsultationReport } from '@ais/report'
 import { pdfToBuffer } from '@ais/report'
 import type { ConsultationReportData } from '@ais/report'

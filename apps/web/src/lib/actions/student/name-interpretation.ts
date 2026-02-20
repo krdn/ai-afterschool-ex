@@ -5,8 +5,8 @@ import { Prisma } from '@ais/db'
 import { db } from "@ais/db/client"
 import { verifySession } from "@/lib/dal"
 import { calculateNameNumerology, generateNameInterpretation } from "@ais/analysis"
-import { getNameAnalysis as getNameAnalysisDb } from "@/lib/db/student/name-analysis"
-import { upsertNameAnalysis } from "@/lib/db/student/analysis"
+import { getNameAnalysis as getNameAnalysisDb } from '@ais/analysis'
+import { upsertNameAnalysis } from '@ais/analysis'
 import { eventBus } from "@/lib/events/event-bus"
 import { generateWithProvider, generateWithSpecificProvider } from '@ais/ai-engine'
 import { getNamePrompt, type NamePromptId } from "@ais/ai-engine/prompts"

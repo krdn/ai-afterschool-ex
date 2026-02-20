@@ -6,7 +6,7 @@ import { generateWithVision, FailoverError } from '@ais/ai-engine'
 import { PALM_READING_PROMPT } from "@ais/ai-engine/prompts"
 import { verifySession } from "@/lib/dal"
 import { db } from "@ais/db/client"
-import { upsertPalmAnalysis, getPalmAnalysis } from "@/lib/db/analysis/palm-analysis"
+import { upsertPalmAnalysis, getPalmAnalysis } from '@ais/analysis'
 import { extractJsonFromLLM } from "@ais/shared"
 import { eventBus } from "@/lib/events/event-bus"
 import { ok, type ActionResult } from "@/lib/errors/action-result"

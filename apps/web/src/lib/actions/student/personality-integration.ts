@@ -8,7 +8,7 @@ import {
   getUnifiedPersonalityData,
   getPersonalitySummary,
   upsertPersonalitySummary,
-} from "@/lib/db/student/personality-summary"
+} from '@ais/analysis'
 import { generateWithProvider, FailoverError } from '@ais/ai-engine'
 import { buildLearningStrategyPrompt, buildCareerGuidancePrompt } from "@ais/ai-engine/prompts"
 import { LearningStrategySchema, CareerGuidanceSchema } from "@/lib/validations/personality"

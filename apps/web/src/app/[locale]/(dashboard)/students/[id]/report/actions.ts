@@ -5,15 +5,16 @@ import type { DocumentProps } from '@react-pdf/renderer'
 import { after } from 'next/server'
 import { verifySession } from '@/lib/dal'
 import { db } from '@ais/db/client'
-import {
+import { counselingReportsRepo } from '@ais/counseling';
+const { 
   getStudentReportPDF,
   shouldRegeneratePDF,
   markPDFGenerating,
   markPDFComplete,
   markPDFFailed,
   fetchReportData,
-} from '@/lib/db/counseling/reports'
-import { getPersonalitySummary } from '@/lib/db/student/personality-summary'
+ } = counselingReportsRepo;
+import { getPersonalitySummary } from '@ais/analysis'
 import { ConsultationReport } from '@ais/report'
 import { pdfToBuffer, generateReportFilename } from '@ais/report'
 import type { ConsultationReportData } from '@ais/report'

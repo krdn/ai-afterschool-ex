@@ -16,7 +16,7 @@ import {
   type StudentImageInput,
 } from "@/lib/validations/student-images"
 import { setStudentImage } from "@/lib/actions/student/images"
-import { markStudentRecalculationNeeded } from "@/lib/db/student/analysis"
+import { markStudentRecalculationNeeded } from '@ais/analysis'
 import { ok, fail, type ActionResult } from "@/lib/errors/action-result"
 
 export type StudentFormState = {

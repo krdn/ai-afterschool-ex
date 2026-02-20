@@ -23,10 +23,10 @@ import {
   markStudentRecalculationNeeded,
   upsertNameAnalysis,
   upsertSajuAnalysis,
-} from "@/lib/db/student/analysis"
+} from '@ais/analysis'
 import { generateWithProvider, generateWithSpecificProvider } from '@ais/ai-engine'
 import { getSajuPromptDefinition as getPromptDefinition, buildSajuPromptFromTemplate as buildPromptFromTemplate, type AnalysisPromptId, type SajuStudentInfo as StudentInfo } from "@ais/ai-engine/prompts"
-import { getPresetByKey } from "@/lib/db/analysis/saju-prompt-preset"
+import { getSajuPresetByKey } from '@ais/analysis'
 import type { ProviderName } from '@ais/ai-engine'
 import { eventBus } from "@/lib/events/event-bus"
 
@@ -233,7 +233,7 @@ export async function runSajuAnalysis(studentId: string, provider?: string, prom
       }
 
       // DB 프리셋 우선, 없으면 코드 기본값 사용
-      const dbPreset = await getPresetByKey(resolvedPromptId)
+      const dbPreset = await getSajuPresetByKey(resolvedPromptId)
       let prompt: string
       if (dbPreset?.isActive && dbPreset.promptTemplate) {
         prompt = buildPromptFromTemplate(dbPreset.promptTemplate, result, studentInfoForPrompt, additionalRequest)
