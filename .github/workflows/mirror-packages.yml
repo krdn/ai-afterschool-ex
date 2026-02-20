@@ -150,13 +150,17 @@ jobs:
 
       - name: Sync to independent repo
         env:
-          GH_TOKEN: ${{ secrets.MIRROR_TOKEN }}
+          MIRROR_TOKEN: ${{ secrets.MIRROR_TOKEN }}
         run: |
           TARGET_REPO="${{ env.OWNER }}/${{ matrix.repo }}"
+          CLONE_URL="https://x-access-token:${MIRROR_TOKEN}@github.com/${TARGET_REPO}.git"
           CLONE_DIR=$(mktemp -d)
 
+          # checkout이 설정한 global credential 제거 (MIRROR_TOKEN 간섭 방지)
+          git config --global --unset-all http.https://github.com/.extraheader 2>/dev/null || true
+
           # 독립 레포 clone
-          git clone "https://x-access-token:${GH_TOKEN}@github.com/${TARGET_REPO}.git" "${CLONE_DIR}"
+          git clone "${CLONE_URL}" "${CLONE_DIR}"
 
           # .git 보존, 나머지 파일 교체
           cd "${CLONE_DIR}"
@@ -169,12 +173,12 @@ jobs:
             exit 0
           fi
 
-          # 커밋 및 푸시
+          # 커밋 및 푸시 (push URL에 토큰 명시)
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
           git commit -m "sync: ${{ steps.commit-info.outputs.message }}" \
             -m "Source: ${MONOREPO_URL}/tree/main/${{ matrix.dir }}" \
             -m "Commit: ${MONOREPO_URL}/commit/${{ steps.commit-info.outputs.sha }}"
-          git push origin main
+          git push "${CLONE_URL}" main
           echo "동기화 완료: ${TARGET_REPO}"
