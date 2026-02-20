@@ -23,7 +23,7 @@ import type {
   ModelConfig,
   ValidationResult,
 } from './types';
-import { encryptApiKey } from '@ais/ai-engine';
+import { encryptApiKey } from './encryption.js';
 import { DEFAULT_MODELS } from './registry-defaults';
 import { validateProvider, syncProviderModels } from './registry-sync';
 

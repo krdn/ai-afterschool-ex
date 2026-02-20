@@ -19,6 +19,14 @@
     "./prompts": {
       "types": "./src/prompts/index.ts",
       "import": "./dist/prompts/index.js"
+    },
+    "./templates": {
+      "types": "./src/templates.ts",
+      "import": "./dist/templates.js"
+    },
+    "./types": {
+      "types": "./src/types.ts",
+      "import": "./dist/types.js"
     }
   },
   "scripts": {

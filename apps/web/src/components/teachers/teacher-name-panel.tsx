@@ -11,7 +11,7 @@ import {
   getStrokeInfo,
   normalizeHanjaSelections,
   selectionsToHanjaName,
-} from "@ais/analysis"
+} from "@ais/analysis/name"
 import type { ProviderName } from "@ais/ai-engine"
 import { ProviderSelector } from "@/components/students/provider-selector"
 import { PromptSelector } from "@/components/students/prompt-selector"
@@ -171,12 +171,12 @@ export function TeacherNamePanel({ teacherId, teacherName, analysis, teacherName
                   <span className="text-xs text-gray-500">
                     {selection.hanja
                       ? (() => {
-                          const info = getStrokeInfo(selection.hanja)
-                          if (!info) return "?획"
-                          return info.estimated
-                            ? `~${info.strokes}획`
-                            : `${info.strokes}획`
-                        })()
+                        const info = getStrokeInfo(selection.hanja)
+                        if (!info) return "?획"
+                        return info.estimated
+                          ? `~${info.strokes}획`
+                          : `${info.strokes}획`
+                      })()
                       : "획수 없음"}
                   </span>
                 </div>

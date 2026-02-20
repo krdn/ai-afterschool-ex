@@ -25,7 +25,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "pnpm dev",
+    command: "pnpm exec dotenv -e .env.test -- pnpm dev",
     url: "http://localhost:3000",
     reuseExistingServer: !CI,
     timeout: 120_000,

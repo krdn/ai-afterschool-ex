@@ -12,7 +12,7 @@
     "clean": "rm -rf .next",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
-    "test:e2e:setup-db": "docker-compose -f docker-compose.test.yml up -d && sleep 3 && dotenv -e .env.test -- pnpm exec prisma migrate deploy && dotenv -e .env.test -- pnpm exec prisma db seed -- --preset test",
+    "test:e2e:setup-db": "docker-compose -f docker-compose.test.yml up -d && sleep 3 && dotenv -e .env.test -- pnpm --filter @ais/db exec prisma migrate deploy && dotenv -e .env.test -- pnpm --filter @ais/db run db:seed -- --preset test",
     "test:e2e:teardown-db": "docker-compose -f docker-compose.test.yml down -v"
   },
   "prisma": {

@@ -7,7 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { PROVIDER_CONFIGS, type ProviderName } from "@ais/ai-engine"
+import { PROVIDER_CONFIGS, type ProviderName } from "@ais/ai-engine/types"
 
 type Props = {
   selectedProvider: string
@@ -33,8 +33,8 @@ export function ProviderSelector({
 }: Props) {
   const filteredProviders = requiresVision
     ? (visionProviders
-        ? availableProviders.filter((p) => visionProviders.includes(p))
-        : availableProviders.filter((p) => PROVIDER_CONFIGS[p]?.supportsVision))
+      ? availableProviders.filter((p) => visionProviders.includes(p))
+      : availableProviders.filter((p) => PROVIDER_CONFIGS[p]?.supportsVision))
     : availableProviders
 
   return (

@@ -6,7 +6,7 @@
  */
 
 import type { LanguageModel } from 'ai';
-import { decryptApiKey as decryptApiKeyFn } from '@ais/ai-engine';
+import { decryptApiKey as decryptApiKeyFn } from '../encryption.js';
 import type {
   ProviderConfig,
   GenerateOptions,

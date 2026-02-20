@@ -10,7 +10,7 @@ import {
 import {
   getProviderTemplates,
   type ProviderTemplate,
-} from '@ais/ai-engine';
+} from '@ais/ai-engine/templates';
 
 // ============================================================
 // Types

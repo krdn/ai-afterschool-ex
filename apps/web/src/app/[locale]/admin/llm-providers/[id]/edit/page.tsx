@@ -6,8 +6,8 @@ import { toast } from 'sonner';
 import { Card, CardContent } from '@/components/ui/card';
 import { AdminPageLayout } from '@/components/admin/admin-page-layout';
 import { ProviderForm } from '@/components/admin/llm-providers/provider-form';
-import { getProviderTemplates } from '@ais/ai-engine';
-import type { ProviderTemplate } from '@ais/ai-engine';
+import { getProviderTemplates } from '@ais/ai-engine/templates';
+import type { ProviderTemplate } from '@ais/ai-engine/templates';
 import type { ProviderWithModels } from '@ais/ai-engine';
 
 interface EditProviderPageProps {
@@ -49,11 +49,11 @@ export default function EditProviderPage({ params }: EditProviderPageProps) {
         }
         const data = await response.json();
         console.log('Provider data loaded:', data);
-        
+
         if (!data.provider) {
           throw new Error('제공자 데이터가 없습니다.');
         }
-        
+
         setProvider(data.provider);
 
         // 템플릿 찾기

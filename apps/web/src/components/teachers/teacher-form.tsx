@@ -11,9 +11,7 @@ import {
   StudentImageUploader,
   type StudentImagePayload,
 } from "@/components/students/student-image-uploader"
-import {
-  coerceHanjaSelections,
-} from "@ais/analysis"
+import { coerceHanjaSelections } from "@ais/analysis/name"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -56,10 +54,10 @@ export function TeacherForm({ teams = [], teacher, currentRole }: TeacherFormPro
   const [profileImage, setProfileImage] = useState<StudentImagePayload | null>(
     teacher?.profileImage && teacher?.profileImagePublicId
       ? {
-          type: "profile",
-          originalUrl: teacher.profileImage,
-          publicId: teacher.profileImagePublicId,
-        }
+        type: "profile",
+        originalUrl: teacher.profileImage,
+        publicId: teacher.profileImagePublicId,
+      }
       : null
   )
 

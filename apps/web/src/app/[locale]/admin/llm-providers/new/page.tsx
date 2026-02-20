@@ -8,7 +8,7 @@ import { Check } from 'lucide-react';
 import { AdminPageLayout } from '@/components/admin/admin-page-layout';
 import { TemplateSelector } from '@/components/admin/llm-providers/template-selector';
 import { ProviderForm } from '@/components/admin/llm-providers/provider-form';
-import { getProviderTemplates } from '@ais/ai-engine';
+import { getProviderTemplates } from '@ais/ai-engine/templates';
 import type { ProviderTemplate } from '@ais/ai-engine';
 
 /**
@@ -60,9 +60,8 @@ export default function NewProviderPage() {
       {/* 진행 단계 표시 */}
       <div className="flex items-center gap-2 mb-8">
         <div
-          className={`flex items-center gap-2 px-4 py-2 rounded-full ${
-            step >= 1 ? 'bg-primary text-primary-foreground' : 'bg-muted'
-          }`}
+          className={`flex items-center gap-2 px-4 py-2 rounded-full ${step >= 1 ? 'bg-primary text-primary-foreground' : 'bg-muted'
+            }`}
         >
           <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-sm font-medium">
             {step > 1 ? <Check className="w-3 h-3" /> : '1'}
@@ -71,9 +70,8 @@ export default function NewProviderPage() {
         </div>
         <div className="w-8 h-px bg-border" />
         <div
-          className={`flex items-center gap-2 px-4 py-2 rounded-full ${
-            step >= 2 ? 'bg-primary text-primary-foreground' : 'bg-muted'
-          }`}
+          className={`flex items-center gap-2 px-4 py-2 rounded-full ${step >= 2 ? 'bg-primary text-primary-foreground' : 'bg-muted'
+            }`}
         >
           <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-sm font-medium">
             2

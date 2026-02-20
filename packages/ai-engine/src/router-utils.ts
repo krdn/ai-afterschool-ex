@@ -9,7 +9,7 @@ import type { LanguageModelUsage } from 'ai';
 import { db } from '@ais/db/client';
 import { FeatureResolver } from './feature-resolver';
 import { getAdapter } from './adapters';
-import { decryptApiKey } from '@ais/ai-engine';
+import { decryptApiKey } from './encryption.js';
 
 // =============================================================================
 // 상수

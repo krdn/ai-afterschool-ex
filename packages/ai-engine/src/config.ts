@@ -1,5 +1,5 @@
 import { db } from '@ais/db/client';
-import { encryptApiKey, decryptApiKey, maskApiKey } from '@ais/ai-engine';
+import { encryptApiKey, decryptApiKey, maskApiKey } from './encryption.js';
 import { PROVIDER_CONFIGS, type ProviderName, type FeatureType } from './providers';
 import { providerTypeToName, type ProviderType } from './types';
 
