@@ -5,8 +5,8 @@
  * idempotent하게 설계되어 여러 번 실행핼도 중복 생성되지 않습니다.
  */
 
-import { PrismaClient, Prisma } from '@ais/db';
-import type { FeatureMappingInput, FallbackMode } from '@ais/ai-engine';
+import { PrismaClient, Prisma } from '@prisma/client';
+type FallbackMode = 'next_priority' | 'any_available' | 'fail';
 
 type DbClient = PrismaClient | Prisma.TransactionClient
 
@@ -24,216 +24,216 @@ const DEFAULT_FEATURE_MAPPINGS: Array<{
     fallbackMode: FallbackMode;
   }>;
 }> = [
-  // 1. learning_analysis (학습 분석)
-  {
-    featureType: 'learning_analysis',
-    rules: [
-      {
-        matchMode: 'auto_tag',
-        priority: 1,
-        requiredTags: ['balanced'],
-        fallbackMode: 'next_priority',
-      },
-      {
-        matchMode: 'auto_tag',
-        priority: 2,
-        requiredTags: ['balanced'],
-        fallbackMode: 'next_priority',
-      },
-    ],
-  },
+    // 1. learning_analysis (학습 분석)
+    {
+      featureType: 'learning_analysis',
+      rules: [
+        {
+          matchMode: 'auto_tag',
+          priority: 1,
+          requiredTags: ['balanced'],
+          fallbackMode: 'next_priority',
+        },
+        {
+          matchMode: 'auto_tag',
+          priority: 2,
+          requiredTags: ['balanced'],
+          fallbackMode: 'next_priority',
+        },
+      ],
+    },
 
-  // 2. face_analysis (얼굴 분석) - Vision 필요
-  {
-    featureType: 'face_analysis',
-    rules: [
-      {
-        matchMode: 'auto_tag',
-        priority: 1,
-        requiredTags: ['vision', 'balanced'],
-        fallbackMode: 'any_available',
-      },
-      {
-        matchMode: 'auto_tag',
-        priority: 2,
-        requiredTags: ['vision'],
-        fallbackMode: 'any_available',
-      },
-    ],
-  },
+    // 2. face_analysis (얼굴 분석) - Vision 필요
+    {
+      featureType: 'face_analysis',
+      rules: [
+        {
+          matchMode: 'auto_tag',
+          priority: 1,
+          requiredTags: ['vision', 'balanced'],
+          fallbackMode: 'any_available',
+        },
+        {
+          matchMode: 'auto_tag',
+          priority: 2,
+          requiredTags: ['vision'],
+          fallbackMode: 'any_available',
+        },
+      ],
+    },
 
-  // 3. palm_analysis (손금 분석) - Vision 필요
-  {
-    featureType: 'palm_analysis',
-    rules: [
-      {
-        matchMode: 'auto_tag',
-        priority: 1,
-        requiredTags: ['vision', 'balanced'],
-        fallbackMode: 'any_available',
-      },
-      {
-        matchMode: 'auto_tag',
-        priority: 2,
-        requiredTags: ['vision'],
-        fallbackMode: 'any_available',
-      },
-    ],
-  },
+    // 3. palm_analysis (손금 분석) - Vision 필요
+    {
+      featureType: 'palm_analysis',
+      rules: [
+        {
+          matchMode: 'auto_tag',
+          priority: 1,
+          requiredTags: ['vision', 'balanced'],
+          fallbackMode: 'any_available',
+        },
+        {
+          matchMode: 'auto_tag',
+          priority: 2,
+          requiredTags: ['vision'],
+          fallbackMode: 'any_available',
+        },
+      ],
+    },
 
-  // 4. report_generate (보고서 생성) - 고품질 선호
-  {
-    featureType: 'report_generate',
-    rules: [
-      {
-        matchMode: 'auto_tag',
-        priority: 1,
-        requiredTags: ['premium'],
-        fallbackMode: 'next_priority',
-      },
-      {
-        matchMode: 'auto_tag',
-        priority: 2,
-        requiredTags: ['balanced'],
-        fallbackMode: 'next_priority',
-      },
-    ],
-  },
+    // 4. report_generate (보고서 생성) - 고품질 선호
+    {
+      featureType: 'report_generate',
+      rules: [
+        {
+          matchMode: 'auto_tag',
+          priority: 1,
+          requiredTags: ['premium'],
+          fallbackMode: 'next_priority',
+        },
+        {
+          matchMode: 'auto_tag',
+          priority: 2,
+          requiredTags: ['balanced'],
+          fallbackMode: 'next_priority',
+        },
+      ],
+    },
 
-  // 5. saju_analysis (사주 분석)
-  {
-    featureType: 'saju_analysis',
-    rules: [
-      {
-        matchMode: 'auto_tag',
-        priority: 1,
-        requiredTags: ['balanced'],
-        fallbackMode: 'any_available',
-      },
-    ],
-  },
+    // 5. saju_analysis (사주 분석)
+    {
+      featureType: 'saju_analysis',
+      rules: [
+        {
+          matchMode: 'auto_tag',
+          priority: 1,
+          requiredTags: ['balanced'],
+          fallbackMode: 'any_available',
+        },
+      ],
+    },
 
-  // 6. mbti_analysis (MBTI 분석) - 빠른 응답 선호
-  {
-    featureType: 'mbti_analysis',
-    rules: [
-      {
-        matchMode: 'auto_tag',
-        priority: 1,
-        requiredTags: ['fast'],
-        fallbackMode: 'next_priority',
-      },
-      {
-        matchMode: 'auto_tag',
-        priority: 2,
-        requiredTags: ['balanced'],
-        fallbackMode: 'next_priority',
-      },
-    ],
-  },
+    // 6. mbti_analysis (MBTI 분석) - 빠른 응답 선호
+    {
+      featureType: 'mbti_analysis',
+      rules: [
+        {
+          matchMode: 'auto_tag',
+          priority: 1,
+          requiredTags: ['fast'],
+          fallbackMode: 'next_priority',
+        },
+        {
+          matchMode: 'auto_tag',
+          priority: 2,
+          requiredTags: ['balanced'],
+          fallbackMode: 'next_priority',
+        },
+      ],
+    },
 
-  // 7. vark_analysis (VARK 분석) - 빠른 응답 선호
-  {
-    featureType: 'vark_analysis',
-    rules: [
-      {
-        matchMode: 'auto_tag',
-        priority: 1,
-        requiredTags: ['fast'],
-        fallbackMode: 'next_priority',
-      },
-      {
-        matchMode: 'auto_tag',
-        priority: 2,
-        requiredTags: ['balanced'],
-        fallbackMode: 'next_priority',
-      },
-    ],
-  },
+    // 7. vark_analysis (VARK 분석) - 빠른 응답 선호
+    {
+      featureType: 'vark_analysis',
+      rules: [
+        {
+          matchMode: 'auto_tag',
+          priority: 1,
+          requiredTags: ['fast'],
+          fallbackMode: 'next_priority',
+        },
+        {
+          matchMode: 'auto_tag',
+          priority: 2,
+          requiredTags: ['balanced'],
+          fallbackMode: 'next_priority',
+        },
+      ],
+    },
 
-  // 8. name_analysis (이름 분석) - 빠른 응답 선호
-  {
-    featureType: 'name_analysis',
-    rules: [
-      {
-        matchMode: 'auto_tag',
-        priority: 1,
-        requiredTags: ['fast'],
-        fallbackMode: 'next_priority',
-      },
-      {
-        matchMode: 'auto_tag',
-        priority: 2,
-        requiredTags: ['balanced'],
-        fallbackMode: 'next_priority',
-      },
-    ],
-  },
+    // 8. name_analysis (이름 분석) - 빠른 응답 선호
+    {
+      featureType: 'name_analysis',
+      rules: [
+        {
+          matchMode: 'auto_tag',
+          priority: 1,
+          requiredTags: ['fast'],
+          fallbackMode: 'next_priority',
+        },
+        {
+          matchMode: 'auto_tag',
+          priority: 2,
+          requiredTags: ['balanced'],
+          fallbackMode: 'next_priority',
+        },
+      ],
+    },
 
-  // 9. zodiac_analysis (별자리 분석) - 빠른 응답 선호
-  {
-    featureType: 'zodiac_analysis',
-    rules: [
-      {
-        matchMode: 'auto_tag',
-        priority: 1,
-        requiredTags: ['fast'],
-        fallbackMode: 'next_priority',
-      },
-      {
-        matchMode: 'auto_tag',
-        priority: 2,
-        requiredTags: ['balanced'],
-        fallbackMode: 'next_priority',
-      },
-    ],
-  },
+    // 9. zodiac_analysis (별자리 분석) - 빠른 응답 선호
+    {
+      featureType: 'zodiac_analysis',
+      rules: [
+        {
+          matchMode: 'auto_tag',
+          priority: 1,
+          requiredTags: ['fast'],
+          fallbackMode: 'next_priority',
+        },
+        {
+          matchMode: 'auto_tag',
+          priority: 2,
+          requiredTags: ['balanced'],
+          fallbackMode: 'next_priority',
+        },
+      ],
+    },
 
-  // 10. counseling_suggest (상담 제안)
-  {
-    featureType: 'counseling_suggest',
-    rules: [
-      {
-        matchMode: 'auto_tag',
-        priority: 1,
-        requiredTags: ['balanced'],
-        fallbackMode: 'any_available',
-      },
-    ],
-  },
+    // 10. counseling_suggest (상담 제안)
+    {
+      featureType: 'counseling_suggest',
+      rules: [
+        {
+          matchMode: 'auto_tag',
+          priority: 1,
+          requiredTags: ['balanced'],
+          fallbackMode: 'any_available',
+        },
+      ],
+    },
 
-  // 11. personality_summary (성격 종합 분석)
-  {
-    featureType: 'personality_summary',
-    rules: [
-      {
-        matchMode: 'auto_tag',
-        priority: 1,
-        requiredTags: ['premium'],
-        fallbackMode: 'next_priority',
-      },
-      {
-        matchMode: 'auto_tag',
-        priority: 2,
-        requiredTags: ['balanced'],
-        fallbackMode: 'next_priority',
-      },
-    ],
-  },
+    // 11. personality_summary (성격 종합 분석)
+    {
+      featureType: 'personality_summary',
+      rules: [
+        {
+          matchMode: 'auto_tag',
+          priority: 1,
+          requiredTags: ['premium'],
+          fallbackMode: 'next_priority',
+        },
+        {
+          matchMode: 'auto_tag',
+          priority: 2,
+          requiredTags: ['balanced'],
+          fallbackMode: 'next_priority',
+        },
+      ],
+    },
 
-  // 12. compatibility_analysis (궁합 분석)
-  {
-    featureType: 'compatibility_analysis',
-    rules: [
-      {
-        matchMode: 'auto_tag',
-        priority: 1,
-        requiredTags: ['balanced'],
-        fallbackMode: 'any_available',
-      },
-    ],
-  },
-];
+    // 12. compatibility_analysis (궁합 분석)
+    {
+      featureType: 'compatibility_analysis',
+      rules: [
+        {
+          matchMode: 'auto_tag',
+          priority: 1,
+          requiredTags: ['balanced'],
+          fallbackMode: 'any_available',
+        },
+      ],
+    },
+  ];
 
 /**
  * 기본 기능 매핑을 시딩합니다.
@@ -257,7 +257,7 @@ export async function seedFeatureMappings(db: DbClient): Promise<number> {
 
       if (!existing) {
         // 새 매핑 생성
-        const input: FeatureMappingInput = {
+        const input = {
           featureType: feature.featureType,
           matchMode: rule.matchMode,
           requiredTags: rule.requiredTags || [],
@@ -353,7 +353,7 @@ export async function clearAllFeatureMappings(db: DbClient): Promise<number> {
  */
 async function main() {
   const db = new PrismaClient();
-  
+
   try {
     const args = process.argv.slice(2);
     const command = args[0] || 'seed';

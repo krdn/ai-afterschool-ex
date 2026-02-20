@@ -9,7 +9,7 @@ import {
   SEED_GROUP_COUNTS,
   type SeedGroup,
   type SeedMode,
-} from '@/lib/db/seed/constants'
+} from '@ais/db/seed-constants'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
@@ -107,7 +107,7 @@ export function DatabaseTab({ userRole }: DatabaseTabProps) {
       resetDialogState()
 
       if (result.success) {
-        const data = result.data
+        const data = result.data as Record<string, { created: number; updated: number }>
         const total = Object.values(data).reduce(
           (acc, v) => ({ created: acc.created + v.created, updated: acc.updated + v.updated }),
           { created: 0, updated: 0 }
@@ -185,9 +185,8 @@ export function DatabaseTab({ userRole }: DatabaseTabProps) {
               return (
                 <div
                   key={group}
-                  className={`flex items-center gap-3 p-2.5 rounded-lg border transition-colors ${
-                    isSelected ? 'bg-white border-gray-300' : 'bg-gray-50 border-gray-200'
-                  }`}
+                  className={`flex items-center gap-3 p-2.5 rounded-lg border transition-colors ${isSelected ? 'bg-white border-gray-300' : 'bg-gray-50 border-gray-200'
+                    }`}
                 >
                   <Checkbox
                     id={`group-${group}`}
@@ -205,22 +204,20 @@ export function DatabaseTab({ userRole }: DatabaseTabProps) {
                         type="button"
                         onClick={() => toggleMode(group, 'merge')}
                         disabled={isForced}
-                        className={`px-2 py-0.5 text-xs rounded transition-colors ${
-                          currentMode === 'merge'
-                            ? 'bg-green-100 text-green-800 font-medium'
-                            : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-                        } ${isForced ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+                        className={`px-2 py-0.5 text-xs rounded transition-colors ${currentMode === 'merge'
+                          ? 'bg-green-100 text-green-800 font-medium'
+                          : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                          } ${isForced ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
                       >
                         추가/갱신
                       </button>
                       <button
                         type="button"
                         onClick={() => toggleMode(group, 'reset')}
-                        className={`px-2 py-0.5 text-xs rounded transition-colors cursor-pointer ${
-                          currentMode === 'reset'
-                            ? 'bg-red-100 text-red-800 font-medium'
-                            : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-                        }`}
+                        className={`px-2 py-0.5 text-xs rounded transition-colors cursor-pointer ${currentMode === 'reset'
+                          ? 'bg-red-100 text-red-800 font-medium'
+                          : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                          }`}
                       >
                         리셋
                       </button>

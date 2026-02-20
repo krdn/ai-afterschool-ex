@@ -7,11 +7,8 @@
  * 실행: npx tsx src/lib/db/seed-provider-templates.ts
  */
 
-import { PrismaClient, Prisma } from '@ais/db';
-import {
-  getProviderTemplates,
-  ProviderTemplate,
-} from '@ais/ai-engine';
+import { PrismaClient, Prisma } from '@prisma/client';
+import { getProviderTemplates } from './provider-templates-data';
 
 type DbClient = PrismaClient | Prisma.TransactionClient;
 

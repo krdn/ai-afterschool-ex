@@ -19,9 +19,10 @@ export async function uploadSeedImages(
   groups: SeedGroup[],
   dataOverride?: Partial<SeedDataSet>,
 ): Promise<void> {
-  let cloudinary: typeof import("cloudinary").v2
+  let cloudinary: any
   let buildResizedImageUrl: (publicId: string) => string
   try {
+    // @ts-ignore: apps/web 컨텍스트에서 실행될 때 제공되는 모듈
     const mod = await import("@/lib/cloudinary")
     if (!mod.isCloudinaryConfigured) {
       console.log("[seed] Cloudinary 미설정 — 이미지 업로드를 건너뜁니다")

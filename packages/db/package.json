@@ -11,6 +11,14 @@
     "./client": {
       "types": "./src/client.ts",
       "import": "./dist/client.js"
+    },
+    "./seed": {
+      "types": "./src/seed.ts",
+      "import": "./dist/seed.js"
+    },
+    "./seed-constants": {
+      "types": "./src/seed-constants.ts",
+      "import": "./dist/seed-constants.js"
     }
   },
   "scripts": {
