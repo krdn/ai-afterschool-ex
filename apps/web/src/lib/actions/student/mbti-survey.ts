@@ -11,9 +11,9 @@ import {
   upsertMbtiAnalysis,
   upsertMbtiDraft,
 } from "@/lib/db/student/mbti-analysis"
-import { generateWithProvider, generateWithSpecificProvider } from "@/lib/ai/universal-router"
+import { generateWithProvider, generateWithSpecificProvider } from '@ais/ai-engine'
 import { MBTI_INTERPRETATION_PROMPT, getMbtiPrompt, type MbtiPromptId } from "@ais/ai-engine/prompts"
-import type { ProviderName } from "@/lib/ai/providers/types"
+import type { ProviderName } from '@ais/ai-engine'
 import { eventBus } from "@/lib/events/event-bus"
 import { ok, fail, type ActionResult } from "@/lib/errors/action-result"
 import questions from "@/data/mbti/questions.json"

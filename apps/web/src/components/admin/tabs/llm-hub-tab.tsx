@@ -8,8 +8,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Plus, Info, AlertCircle, BarChart3 } from 'lucide-react';
 import { ProviderList } from '@/components/admin/llm-providers/provider-list';
 import { FeatureMappingList } from '@/components/admin/llm-features/feature-mapping-list';
-import type { ProviderWithModels } from '@/lib/ai/types';
-import type { MatchMode, FallbackMode } from '@/lib/ai/types';
+import type { ProviderWithModels } from '@ais/ai-engine';
+import type { MatchMode, FallbackMode } from '@ais/ai-engine';
 import type { DailyUsageData, ProviderUsageData, FeatureUsageData } from '@/app/[locale]/(dashboard)/admin/llm-usage/usage-charts';
 
 interface FeatureMapping {

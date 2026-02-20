@@ -3,7 +3,7 @@ import {
   aggregatePreviousMonth,
   aggregateMonthlyUsage,
   cleanupOldUsageData,
-} from '@/lib/ai/usage-aggregation';
+} from '@ais/ai-engine';
 
 // 인증용 API 키 (환경 변수에서 로드)
 // Vercel Cron 또는 외부 cron 서비스에서 사용
@@ -96,7 +96,7 @@ export async function GET(request: Request) {
         year,
         month,
         aggregated: aggregation.aggregated,
-        records: aggregation.records.map((r) => ({
+        records: aggregation.records.map((r: { provider: string; featureType: string; totalRequests: number; totalCostUsd: number; }) => ({
           provider: r.provider,
           featureType: r.featureType,
           totalRequests: r.totalRequests,
@@ -110,7 +110,7 @@ export async function GET(request: Request) {
         year: aggregation.year,
         month: aggregation.month,
         aggregated: aggregation.aggregated,
-        records: aggregation.records.map((r) => ({
+        records: aggregation.records.map((r: { provider: string; featureType: string; totalRequests: number; totalCostUsd: number; }) => ({
           provider: r.provider,
           featureType: r.featureType,
           totalRequests: r.totalRequests,

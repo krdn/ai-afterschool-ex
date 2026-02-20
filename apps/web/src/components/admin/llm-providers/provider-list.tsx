@@ -5,7 +5,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { Plus } from 'lucide-react';
 import Link from 'next/link';
-import type { ProviderWithModels } from '@/lib/ai/types';
+import type { ProviderWithModels } from '@ais/ai-engine';
 
 interface ProviderListProps {
   providers: ProviderWithModels[];

@@ -3,7 +3,7 @@
 import { useState, type ReactNode } from "react"
 import { AlertCircle, Sparkles, type LucideIcon } from "lucide-react"
 import { useTranslations } from "next-intl"
-import type { ProviderName } from "@/lib/ai/providers/types"
+import type { ProviderName } from "@ais/ai-engine"
 import { ProviderSelector } from "@/components/students/provider-selector"
 import { PromptSelector } from "@/components/students/prompt-selector"
 import type { GenericPromptMeta } from "@/components/students/prompt-selector"

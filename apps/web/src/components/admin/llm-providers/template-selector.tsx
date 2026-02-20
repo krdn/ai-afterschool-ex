@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { Sparkles, Settings, Check } from 'lucide-react';
-import type { ProviderTemplate } from '@/lib/ai/templates';
+import type { ProviderTemplate } from '@ais/ai-engine';
 
 interface TemplateSelectorProps {
   templates: ProviderTemplate[];

@@ -6,7 +6,7 @@ import { verifySession } from "@/lib/dal"
 import { db } from "@/lib/db"
 import { getUnifiedPersonalityData, upsertPersonalitySummary } from "@/lib/db/student/personality-summary"
 import { getCompatibilityResult } from "@/lib/db/matching/compatibility-result"
-import { generateWithProvider, FailoverError } from "@/lib/ai/universal-router"
+import { generateWithProvider, FailoverError } from '@ais/ai-engine'
 import { buildCounselingSummaryPrompt, buildPersonalitySummaryPrompt } from "@ais/ai-engine/prompts"
 import { ok, fail, okVoid, type ActionResult, type ActionVoidResult } from "@/lib/errors/action-result"
 

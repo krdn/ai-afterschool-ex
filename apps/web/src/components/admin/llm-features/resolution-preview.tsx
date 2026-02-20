@@ -14,7 +14,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { AlertCircle, ArrowDown, CheckCircle2, RefreshCw, Server } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { resolveFeatureAction, getResolutionChainAction } from '@/lib/actions/admin/feature-mappings';
-import type { ResolutionRequirements } from '@/lib/ai/types';
+import type { ResolutionRequirements } from '@ais/ai-engine';
 
 interface ResolutionPreviewProps {
   featureType: string;

@@ -24,10 +24,10 @@ import {
   upsertNameAnalysis,
   upsertSajuAnalysis,
 } from "@/lib/db/student/analysis"
-import { generateWithProvider, generateWithSpecificProvider } from "@/lib/ai/universal-router"
+import { generateWithProvider, generateWithSpecificProvider } from '@ais/ai-engine'
 import { getSajuPromptDefinition as getPromptDefinition, buildSajuPromptFromTemplate as buildPromptFromTemplate, type AnalysisPromptId, type SajuStudentInfo as StudentInfo } from "@ais/ai-engine/prompts"
 import { getPresetByKey } from "@/lib/db/analysis/saju-prompt-preset"
-import type { ProviderName } from "@/lib/ai/providers/types"
+import type { ProviderName } from '@ais/ai-engine'
 import { eventBus } from "@/lib/events/event-bus"
 
 type AnalysisInput = Prisma.JsonValue

@@ -1,4 +1,4 @@
-import { db } from '@/lib/db';
+import { db } from '@ais/db/client';
 import { COST_PER_MILLION_TOKENS, type ProviderName, type FeatureType } from './providers';
 
 export function calculateCost(

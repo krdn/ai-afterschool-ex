@@ -14,18 +14,18 @@ import {
   getProviderTemplates,
   getProviderTemplate,
   ProviderTemplate,
-} from '@/lib/ai/templates';
+} from '@ais/ai-engine';
 import {
   getProviderRegistry,
   ProviderRegistry,
-} from '@/lib/ai/provider-registry';
+} from '@ais/ai-engine';
 import type {
   ProviderInput,
   ProviderConfig,
   ProviderWithModels,
   ModelConfig,
   ValidationResult,
-} from '@/lib/ai/types';
+} from '@ais/ai-engine';
 
 // ============================================================================
 // Template Actions
@@ -227,4 +227,4 @@ export async function setDefaultModelAction(
 // ============================================================================
 
 // ProviderRegistry는 server-only 모듈에서 import하세요
-// import { getProviderRegistry } from '@/lib/ai/provider-registry';
+// import { getProviderRegistry } from '@ais/ai-engine';

@@ -15,10 +15,10 @@ import { upsertSajuAnalysis, upsertNameAnalysis } from "@/lib/db/student/analysi
 import { createTeacherSajuHistory } from "@/lib/db/teacher/analysis"
 import { upsertMbtiAnalysisGeneric, getMbtiAnalysisGeneric } from "@/lib/db/student/mbti-analysis"
 import { getNameAnalysis } from "@/lib/db/student/name-analysis"
-import { generateWithProvider, generateWithSpecificProvider } from "@/lib/ai/universal-router"
+import { generateWithProvider, generateWithSpecificProvider } from '@ais/ai-engine'
 import { MBTI_INTERPRETATION_PROMPT, getMbtiPrompt, type MbtiPromptId, getNamePrompt, type NamePromptId, getSajuPromptDefinition as getPromptDefinition, type AnalysisPromptId } from "@ais/ai-engine/prompts"
 import { getPresetByKey } from "@/lib/db/analysis/saju-prompt-preset"
-import type { ProviderName } from "@/lib/ai/providers/types"
+import type { ProviderName } from '@ais/ai-engine'
 import { eventBus } from "@/lib/events/event-bus"
 import { ok, fail, type ActionResult } from "@/lib/errors/action-result"
 import questions from "@/data/mbti/questions.json"

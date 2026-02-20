@@ -9,7 +9,7 @@ import {
   getPersonalitySummary,
   upsertPersonalitySummary,
 } from "@/lib/db/student/personality-summary"
-import { generateWithProvider, FailoverError } from "@/lib/ai/universal-router"
+import { generateWithProvider, FailoverError } from '@ais/ai-engine'
 import { buildLearningStrategyPrompt, buildCareerGuidancePrompt } from "@ais/ai-engine/prompts"
 import { LearningStrategySchema, CareerGuidanceSchema } from "@/lib/validations/personality"
 import { extractJsonFromLLM } from "@ais/shared"

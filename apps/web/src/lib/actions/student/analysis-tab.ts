@@ -8,9 +8,9 @@ import { getVarkAnalysis } from "@/lib/db/student/vark-analysis"
 import { getNameAnalysisByStudentId } from "@/lib/db/student/name-analysis"
 import { getZodiacAnalysis } from "@/lib/db/student/zodiac-analysis"
 import { getSajuAnalysis } from "@/lib/db/student/analysis"
-import { getEnabledProviders, getEnabledProvidersWithVision } from "@/lib/ai/config"
+import { getEnabledProviders, getEnabledProvidersWithVision } from '@ais/ai-engine'
 import { getActivePresetsByType } from "@/lib/db/analysis/prompt-preset"
-import type { ProviderName } from "@/lib/ai/providers/types"
+import type { ProviderName } from '@ais/ai-engine'
 
 export type PromptOption = {
   id: string

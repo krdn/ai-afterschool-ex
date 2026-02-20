@@ -6,7 +6,7 @@
  */
 
 import { PrismaClient, Prisma } from '@prisma/client';
-import type { FeatureMappingInput, FallbackMode } from '@/lib/ai/types';
+import type { FeatureMappingInput, FallbackMode } from '@ais/ai-engine';
 
 type DbClient = PrismaClient | Prisma.TransactionClient
 

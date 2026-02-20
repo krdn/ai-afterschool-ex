@@ -9,7 +9,7 @@ import { FeatureMappingList } from '@/components/admin/llm-features/feature-mapp
 import { getFeatureMappingsAction } from '@/lib/actions/admin/feature-mappings';
 import { getProvidersAction } from '@/lib/actions/admin/providers';
 import { verifySession } from '@/lib/dal';
-import type { MatchMode, FallbackMode } from '@/lib/ai/types';
+import type { MatchMode, FallbackMode } from '@ais/ai-engine';
 
 export const metadata: Metadata = {
   title: '기능별 LLM 매핑 | AI 애프터스쿨',

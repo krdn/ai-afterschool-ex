@@ -8,9 +8,9 @@ import { calculateNameNumerology, generateNameInterpretation } from "@ais/analys
 import { getNameAnalysis as getNameAnalysisDb } from "@/lib/db/student/name-analysis"
 import { upsertNameAnalysis } from "@/lib/db/student/analysis"
 import { eventBus } from "@/lib/events/event-bus"
-import { generateWithProvider, generateWithSpecificProvider } from "@/lib/ai/universal-router"
+import { generateWithProvider, generateWithSpecificProvider } from '@ais/ai-engine'
 import { getNamePrompt, type NamePromptId } from "@ais/ai-engine/prompts"
-import type { ProviderName } from "@/lib/ai/providers/types"
+import type { ProviderName } from '@ais/ai-engine'
 import { ok, type ActionResult } from "@/lib/errors/action-result"
 
 /**

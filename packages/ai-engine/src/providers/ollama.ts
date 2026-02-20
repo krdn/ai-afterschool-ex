@@ -153,7 +153,7 @@ export async function getOllamaModels(options?: { baseUrl?: string; apiKey?: str
       return [];
     }
 
-    const data = await response.json();
+    const data = await response.json() as { data?: any[]; models?: any[] };
 
     // Open WebUI 프록시: { data: [{ id, name, ollama: { size } }] }
     if (isProxy && data.data) {

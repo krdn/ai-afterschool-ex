@@ -2,13 +2,13 @@
 
 import { revalidatePath } from "next/cache"
 import { after } from "next/server"
-import { generateWithVision, generateVisionWithSpecificProvider, FailoverError } from "@/lib/ai/universal-router"
+import { generateWithVision, generateVisionWithSpecificProvider, FailoverError } from '@ais/ai-engine'
 import { FACE_READING_PROMPT, getFacePrompt, type FacePromptId } from "@ais/ai-engine/prompts"
 import { verifySession } from "@/lib/dal"
 import { db } from "@/lib/db"
 import { upsertFaceAnalysis, getFaceAnalysis } from "@/lib/db/analysis/face-analysis"
 import { extractJsonFromLLM } from "@ais/shared"
-import type { ProviderName } from "@/lib/ai/providers/types"
+import type { ProviderName } from '@ais/ai-engine'
 import { eventBus } from "@/lib/events/event-bus"
 import { ok, fail, type ActionResult } from "@/lib/errors/action-result"
 

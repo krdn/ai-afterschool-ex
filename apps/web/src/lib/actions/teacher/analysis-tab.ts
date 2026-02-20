@@ -6,9 +6,9 @@ import { getPalmAnalysis } from "@/lib/db/analysis/palm-analysis"
 import { getMbtiAnalysisGeneric } from "@/lib/db/student/mbti-analysis"
 import { getNameAnalysis } from "@/lib/db/student/name-analysis"
 import { getSajuAnalysis } from "@/lib/db/student/analysis"
-import { getEnabledProviders, getEnabledProvidersWithVision } from "@/lib/ai/config"
+import { getEnabledProviders, getEnabledProvidersWithVision } from '@ais/ai-engine'
 import { getActivePresetsByType } from "@/lib/db/analysis/prompt-preset"
-import type { ProviderName } from "@/lib/ai/providers/types"
+import type { ProviderName } from '@ais/ai-engine'
 
 export type PromptOption = {
   id: string

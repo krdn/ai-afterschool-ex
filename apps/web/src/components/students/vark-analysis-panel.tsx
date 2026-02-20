@@ -6,7 +6,7 @@ import { BookOpen, Pencil, Trash2, Loader2 } from "lucide-react"
 import { VarkHelpDialog } from "@/components/students/vark-help-dialog"
 import { VarkResultsDisplay } from "@/components/vark/results-display"
 import { generateVarkLLMInterpretation } from "@/lib/actions/student/vark-survey"
-import type { ProviderName } from "@/lib/ai/providers/types"
+import type { ProviderName } from "@ais/ai-engine"
 import type { GenericPromptMeta } from "@/components/students/prompt-selector"
 import {
   AnalysisErrorBanner,

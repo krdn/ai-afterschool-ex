@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache"
 import { after } from "next/server"
-import { generateWithVision, FailoverError } from "@/lib/ai/universal-router"
+import { generateWithVision, FailoverError } from '@ais/ai-engine'
 import { PALM_READING_PROMPT } from "@ais/ai-engine/prompts"
 import { verifySession } from "@/lib/dal"
 import { db } from "@/lib/db"

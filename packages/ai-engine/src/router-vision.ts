@@ -6,7 +6,7 @@
  */
 
 import { generateText, type ModelMessage } from 'ai';
-import { db } from '@/lib/db';
+import { db } from '@ais/db/client';
 import { getProviderRegistry } from './provider-registry';
 import { trackUsage, trackFailure } from './usage-tracker';
 import { FailoverError, isRetryableError } from './failover';

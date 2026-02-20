@@ -26,7 +26,7 @@ import {
   deleteFeatureMappingAction,
   updateFeatureMappingAction,
 } from '@/lib/actions/admin/feature-mappings';
-import type { MatchMode, FallbackMode } from '@/lib/ai/types';
+import type { MatchMode, FallbackMode } from '@ais/ai-engine';
 
 // Feature 타입 목록
 const FEATURE_TYPES = [

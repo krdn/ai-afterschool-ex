@@ -8,8 +8,8 @@ import {
   syncProviderModelsAction,
   setDefaultModelAction,
 } from '@/lib/actions/admin/providers';
-import type { ProviderWithModels, ProviderInput, Capability } from '@/lib/ai/types';
-import type { ProviderTemplate } from '@/lib/ai/templates';
+import type { ProviderWithModels, ProviderInput, Capability } from '@ais/ai-engine';
+import type { ProviderTemplate } from '@ais/ai-engine';
 import { providerFormSchema, type ProviderFormValues } from './provider-form-schema';
 
 export interface ProviderFormProps {

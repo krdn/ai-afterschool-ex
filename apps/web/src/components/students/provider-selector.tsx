@@ -7,7 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { PROVIDER_CONFIGS, type ProviderName } from "@/lib/ai/providers/types"
+import { PROVIDER_CONFIGS, type ProviderName } from "@ais/ai-engine"
 
 type Props = {
   selectedProvider: string

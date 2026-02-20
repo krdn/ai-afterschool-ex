@@ -34,7 +34,7 @@ import {
   Pin,
   Key,
 } from 'lucide-react';
-import type { ProviderWithModels } from '@/lib/ai/types';
+import type { ProviderWithModels } from '@ais/ai-engine';
 
 interface ProviderCardProps {
   provider: ProviderWithModels;

@@ -9,7 +9,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { verifySession } from '@/lib/dal';
 import { db } from '@/lib/db';
-import type { AuthType, CostTier, QualityTier } from '@/lib/ai/types';
+import type { AuthType, CostTier, QualityTier } from '@ais/ai-engine';
 
 interface RouteParams {
   params: Promise<{

@@ -34,7 +34,7 @@ import type {
   FallbackMode,
   CostTier,
   QualityTier,
-} from '@/lib/ai/types';
+} from '@ais/ai-engine';
 
 // Feature 타입 목록
 const FEATURE_TYPES = [

@@ -1,4 +1,4 @@
-import { db } from '@/lib/db';
+import { db } from '@ais/db/client';
 import type { ProviderName, FeatureType } from './providers';
 
 const PROVIDERS: ProviderName[] = ['anthropic', 'openai', 'google', 'ollama'];

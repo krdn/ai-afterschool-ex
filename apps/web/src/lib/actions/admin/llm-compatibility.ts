@@ -2,7 +2,7 @@
 
 import { db } from "@/lib/db"
 import { verifySession } from "@/lib/dal"
-import { generateWithProvider } from "@/lib/ai/universal-router"
+import { generateWithProvider } from '@ais/ai-engine'
 import {
   COMPATIBILITY_SYSTEM_PROMPT,
   buildCompatibilityPrompt,

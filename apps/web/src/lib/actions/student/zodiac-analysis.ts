@@ -6,9 +6,9 @@ import { verifySession } from "@/lib/dal"
 import { getZodiacSign } from "@ais/analysis"
 import { getZodiacAnalysis as getZodiacAnalysisDb, upsertZodiacAnalysis } from "@/lib/db/student/zodiac-analysis"
 import { eventBus } from "@/lib/events/event-bus"
-import { generateWithProvider, generateWithSpecificProvider } from "@/lib/ai/universal-router"
+import { generateWithProvider, generateWithSpecificProvider } from '@ais/ai-engine'
 import { getZodiacPrompt, type ZodiacPromptId } from "@ais/ai-engine/prompts"
-import type { ProviderName } from "@/lib/ai/providers/types"
+import type { ProviderName } from '@ais/ai-engine'
 import { ok, type ActionResult } from "@/lib/errors/action-result"
 
 /**

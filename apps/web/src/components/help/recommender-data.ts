@@ -8,9 +8,9 @@ import {
   Server,
 } from 'lucide-react';
 import {
-  getPopularTemplates,
+  getProviderTemplates,
   type ProviderTemplate,
-} from '@/lib/ai/templates';
+} from '@ais/ai-engine';
 
 // ============================================================
 // Types
@@ -155,12 +155,12 @@ export function calculateRecommendations(
   techLevel: 'easy' | 'advanced',
   budget: 'free' | 'low' | 'medium' | 'unlimited'
 ): Recommendation[] {
-  const templates = getPopularTemplates();
+  const templates = getProviderTemplates().filter(t => t.isPopular !== false);
   const purposeOption = purposeOptions.find((p) => p.id === purpose);
   const purposeTags = purposeOption?.tags || [];
 
   const scored = templates
-    .filter((template) => {
+    .filter((template: ProviderTemplate) => {
       // 기술 수준 필터링
       if (techLevel === 'easy' && template.templateId === 'ollama') {
         return false; // Ollama는 advanced
@@ -179,7 +179,7 @@ export function calculateRecommendations(
 
       return true;
     })
-    .map((template) => {
+    .map((template: ProviderTemplate) => {
       let score = 0;
       const reasons: string[] = [];
 
@@ -254,10 +254,10 @@ export function calculateRecommendations(
     });
 
   // 점수순 정렬
-  scored.sort((a, b) => b.score - a.score);
+  scored.sort((a: { score: number }, b: { score: number }) => b.score - a.score);
 
   // 순위 할당
-  const results: Recommendation[] = scored.slice(0, 2).map((item, index) => ({
+  const results: Recommendation[] = scored.slice(0, 2).map((item: { template: ProviderTemplate, score: number, reasons: string[], rank: 1 | 2 }, index: number) => ({
     ...item,
     rank: (index + 1) as 1 | 2,
   }));

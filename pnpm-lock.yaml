@@ -17,30 +17,6 @@ importers:
 
   apps/web:
     dependencies:
-      '@ai-sdk/anthropic':
-        specifier: ^3.0.44
-        version: 3.0.45(zod@4.3.6)
-      '@ai-sdk/cohere':
-        specifier: ^3.0.19
-        version: 3.0.21(zod@4.3.6)
-      '@ai-sdk/deepseek':
-        specifier: ^2.0.18
-        version: 2.0.20(zod@4.3.6)
-      '@ai-sdk/google':
-        specifier: ^3.0.18
-        version: 3.0.29(zod@4.3.6)
-      '@ai-sdk/mistral':
-        specifier: ^3.0.19
-        version: 3.0.20(zod@4.3.6)
-      '@ai-sdk/openai':
-        specifier: ^3.0.23
-        version: 3.0.30(zod@4.3.6)
-      '@ai-sdk/openai-compatible':
-        specifier: ^2.0.30
-        version: 2.0.30(zod@4.3.6)
-      '@ai-sdk/xai':
-        specifier: ^3.0.50
-        version: 3.0.57(zod@4.3.6)
       '@ais/ai-engine':
         specifier: workspace:*
         version: link:../../packages/ai-engine
@@ -65,9 +41,6 @@ importers:
       '@ais/ui':
         specifier: workspace:*
         version: link:../../packages/ui
-      '@anthropic-ai/sdk':
-        specifier: ^0.71.2
-        version: 0.71.2(zod@4.3.6)
       '@aws-sdk/client-s3':
         specifier: ^3.990.0
         version: 3.993.0
@@ -107,9 +80,6 @@ importers:
       '@tanstack/react-table':
         specifier: ^8.21.3
         version: 8.21.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      ai:
-        specifier: ^6.0.64
-        version: 6.0.91(zod@4.3.6)
       argon2:
         specifier: ^0.44.0
         version: 0.44.0
@@ -161,9 +131,6 @@ importers:
       octokit:
         specifier: ^5.0.5
         version: 5.0.5
-      ollama-ai-provider-v2:
-        specifier: ^3.0.3
-        version: 3.3.1(ai@6.0.91(zod@4.3.6))(zod@4.3.6)
       pg:
         specifier: ^8.17.2
         version: 8.18.0
@@ -230,9 +197,6 @@ importers:
       uuid:
         specifier: ^13.0.0
         version: 13.0.0
-      zhipu-ai-provider:
-        specifier: ^0.2.2
-        version: 0.2.2(zod@4.3.6)
       zod:
         specifier: ^4.3.6
         version: 4.3.6
@@ -291,9 +255,24 @@ importers:
       '@ais/analysis':
         specifier: workspace:*
         version: link:../analysis
+      '@ais/db':
+        specifier: workspace:*
+        version: link:../db
       '@ais/shared':
         specifier: workspace:*
         version: link:../shared
+      '@anthropic-ai/sdk':
+        specifier: ^0.71.2
+        version: 0.71.2(zod@4.3.6)
+      '@prisma/client':
+        specifier: ^7.4.0
+        version: 7.4.0(prisma@7.4.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@5.9.3))(typescript@5.9.3)
+      sharp:
+        specifier: ^0.34.5
+        version: 0.34.5
+      zhipu-ai-provider:
+        specifier: ^0.2.2
+        version: 0.2.2(zod@4.3.6)
     devDependencies:
       '@ai-sdk/anthropic':
         specifier: ^3.0.44
@@ -322,6 +301,9 @@ importers:
       '@types/node':
         specifier: ^22
         version: 22.19.11
+      '@types/sharp':
+        specifier: ^0.32.0
+        version: 0.32.0
       ai:
         specifier: ^6.0.64
         version: 6.0.91(zod@4.3.6)
@@ -3434,6 +3416,10 @@ packages:
 
   '@types/react@19.2.14':
     resolution: {integrity: sha512-ilcTH/UniCkMdtexkoCN0bI7pMcJDvmQFPvuPvmEaYA/NSfFTAgdUSLAoVjaRJm7+6PvcM+q1zYOwS4wTYMF9w==}
+
+  '@types/sharp@0.32.0':
+    resolution: {integrity: sha512-OOi3kL+FZDnPhVzsfD37J88FNeZh6gQsGcLc95NbeURRGvmSjeXiDcyWzF2o3yh/gQAUn2uhh/e+CPCa5nwAxw==}
+    deprecated: This is a stub types definition. sharp provides its own type definitions, so you do not need this installed.
 
   '@types/tedious@4.0.14':
     resolution: {integrity: sha512-KHPsfX/FoVbUGbyYvk1q9MMQHLPeRZhRJZdO45Q4YjvFkv4hMNghCWTvy7rdKessBsmtz4euWCWAB6/tVpI1Iw==}
@@ -10157,6 +10143,10 @@ snapshots:
   '@types/react@19.2.14':
     dependencies:
       csstype: 3.2.3
+
+  '@types/sharp@0.32.0':
+    dependencies:
+      sharp: 0.34.5
 
   '@types/tedious@4.0.14':
     dependencies:

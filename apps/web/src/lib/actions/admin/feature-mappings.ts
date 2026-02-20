@@ -7,7 +7,7 @@
  */
 
 import { revalidatePath } from 'next/cache';
-import { FeatureResolver } from '@/lib/ai/feature-resolver';
+import { FeatureResolver } from '@ais/ai-engine';
 import { verifySession } from '@/lib/dal';
 import { logger } from '@/lib/logger';
 import { db } from '@/lib/db';
@@ -16,7 +16,7 @@ import type {
   FeatureMappingConfig,
   ResolutionRequirements,
   ResolutionResult,
-} from '@/lib/ai/types';
+} from '@ais/ai-engine';
 import { ok, fail, okVoid, type ActionResult, type ActionVoidResult } from "@/lib/errors/action-result";
 
 // ============================================================================

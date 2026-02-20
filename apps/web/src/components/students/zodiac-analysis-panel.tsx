@@ -4,7 +4,7 @@ import { useState, useTransition } from "react"
 import { Star, Trash2, Loader2 } from "lucide-react"
 import { ZodiacHelpDialog } from "@/components/students/zodiac-help-dialog"
 import { runZodiacAnalysis, generateZodiacLLMInterpretation } from "@/lib/actions/student/zodiac-analysis"
-import type { ProviderName } from "@/lib/ai/providers/types"
+import type { ProviderName } from "@ais/ai-engine"
 import type { GenericPromptMeta } from "@/components/students/prompt-selector"
 import { Button } from "@/components/ui/button"
 import {

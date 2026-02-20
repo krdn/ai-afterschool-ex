@@ -3,12 +3,12 @@ import { verifySession } from '@/lib/dal'
 import { AdminTabsWrapper, AdminTabsContent } from '@/components/admin/admin-tabs-wrapper'
 
 // LLM 사용량 관련
-import { getCurrentPeriodCost } from '@/lib/ai/usage-tracker'
-import { getUsageStatsByProvider, getUsageStatsByFeature } from '@/lib/ai/usage-tracker'
-import { getBudgetSummary } from '@/lib/ai/smart-routing'
+import { getCurrentPeriodCost } from '@ais/ai-engine'
+import { getUsageStatsByProvider, getUsageStatsByFeature } from '@ais/ai-engine'
+import { getBudgetSummary } from '@ais/ai-engine'
 import { db } from '@/lib/db'
 import type { DailyUsageData, ProviderUsageData, FeatureUsageData } from '@/app/[locale]/(dashboard)/admin/llm-usage/usage-charts'
-import type { ProviderName } from '@/lib/ai/providers'
+import type { ProviderName } from '@ais/ai-engine'
 
 // 새로운 탭 컴포넌트
 import { StatusTab } from '@/components/admin/tabs/status-tab'
@@ -328,12 +328,12 @@ export default async function AdminPage() {
             mappings={universalMappings.success ? universalMappings.data?.map((m) => ({
               id: (m as unknown as Record<string, string>).id || '',
               featureType: (m as unknown as Record<string, string>).featureType || '',
-              matchMode: (m as unknown as Record<string, string>).matchMode as import('@/lib/ai/types').MatchMode,
+              matchMode: (m as unknown as Record<string, string>).matchMode as import('@ais/ai-engine').MatchMode,
               requiredTags: ((m as unknown as Record<string, string[]>).requiredTags) || [],
               excludedTags: ((m as unknown as Record<string, string[]>).excludedTags) || [],
               specificModelId: (m as unknown as Record<string, string | null>).specificModelId || null,
               priority: (m as unknown as Record<string, number>).priority || 1,
-              fallbackMode: (m as unknown as Record<string, string>).fallbackMode as import('@/lib/ai/types').FallbackMode,
+              fallbackMode: (m as unknown as Record<string, string>).fallbackMode as import('@ais/ai-engine').FallbackMode,
               specificModel: null,
             })) || [] : []}
             dailyCost={dailyCost}

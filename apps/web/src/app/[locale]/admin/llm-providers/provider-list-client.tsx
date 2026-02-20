@@ -9,7 +9,7 @@ import {
   updateProviderAction,
   deleteProviderAction,
 } from '@/lib/actions/admin/providers';
-import type { ProviderWithModels } from '@/lib/ai/types';
+import type { ProviderWithModels } from '@ais/ai-engine';
 import { handleStaleDeploymentError } from '@/lib/errors/stale-deployment';
 
 interface ProviderListClientProps {

@@ -30,12 +30,6 @@ export default async function LLMProvidersPage() {
       ]}
       actions={
         <>
-          <Button variant="outline" asChild>
-            <Link href="/admin/llm-settings">
-              <Settings className="w-4 h-4 mr-2" />
-              라우터 설정
-            </Link>
-          </Button>
           <Button asChild>
             <Link href="/admin/llm-providers/new">
               <Plus className="w-4 h-4 mr-2" />

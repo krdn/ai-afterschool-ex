@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
-import { testProviderConnection } from '@/lib/ai/test-provider';
-import type { ProviderName } from '@/lib/ai/providers';
+import { testProviderConnection } from '@ais/ai-engine';
+import type { ProviderName } from '@ais/ai-engine';
 import { verifySession } from '@/lib/dal';
 
-export async function POST(request: Request) {
+export async function POST(request: Request): Promise<NextResponse> {
   try {
     const session = await verifySession();
 

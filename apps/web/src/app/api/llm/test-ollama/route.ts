@@ -4,12 +4,12 @@ import {
   checkOllamaHealth,
   testOllamaConnection,
   getOllamaModels,
-} from '@/lib/ai/providers';
+} from '@ais/ai-engine';
 
 /**
  * Ollama 상태 확인 엔드포인트 (DIRECTOR only)
  */
-export async function GET() {
+export async function GET(): Promise<NextResponse> {
   try {
     const session = await verifySession();
     if (!session || session.role !== 'DIRECTOR') {
@@ -36,7 +36,7 @@ export async function GET() {
 /**
  * Ollama 연결 테스트 (POST)
  */
-export async function POST(request: Request) {
+export async function POST(request: Request): Promise<NextResponse> {
   try {
     const session = await verifySession();
     if (!session || session.role !== 'DIRECTOR') {

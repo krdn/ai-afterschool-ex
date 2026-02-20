@@ -1,4 +1,4 @@
-import { db } from '@/lib/db';
+import { db } from '@ais/db/client';
 import { encryptApiKey, decryptApiKey, maskApiKey } from '@ais/ai-engine';
 import { PROVIDER_CONFIGS, type ProviderName, type FeatureType } from './providers';
 import { providerTypeToName, type ProviderType } from './types';

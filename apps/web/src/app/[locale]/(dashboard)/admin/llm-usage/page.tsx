@@ -1,11 +1,11 @@
 import { redirect } from "next/navigation";
 import { verifySession } from "@/lib/dal";
-import { getCurrentPeriodCost } from "@/lib/ai/usage-tracker";
+import { getCurrentPeriodCost } from "@ais/ai-engine";
 import {
   getUsageStatsByProvider,
   getUsageStatsByFeature,
-} from "@/lib/ai/usage-tracker";
-import { getBudgetSummary } from "@/lib/ai/smart-routing";
+} from "@ais/ai-engine";
+import { getBudgetSummary } from "@ais/ai-engine";
 import { db } from "@/lib/db";
 import {
   UsageCharts,
@@ -16,7 +16,7 @@ import {
 import { CostAlerts, CostSummaryCards } from "./cost-alerts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Activity, DollarSign, Zap, Clock } from "lucide-react";
-import type { ProviderName, FeatureType } from "@/lib/ai/providers";
+import type { ProviderName, FeatureType } from "@ais/ai-engine";
 
 export const metadata = {
   title: "LLM 사용량 대시보드 | AI AfterSchool",

@@ -6,9 +6,9 @@ import { toast } from 'sonner';
 import { Card, CardContent } from '@/components/ui/card';
 import { AdminPageLayout } from '@/components/admin/admin-page-layout';
 import { ProviderForm } from '@/components/admin/llm-providers/provider-form';
-import { getProviderTemplates } from '@/lib/ai/templates';
-import type { ProviderTemplate } from '@/lib/ai/templates';
-import type { ProviderWithModels } from '@/lib/ai/types';
+import { getProviderTemplates } from '@ais/ai-engine';
+import type { ProviderTemplate } from '@ais/ai-engine';
+import type { ProviderWithModels } from '@ais/ai-engine';
 
 interface EditProviderPageProps {
   params: Promise<{

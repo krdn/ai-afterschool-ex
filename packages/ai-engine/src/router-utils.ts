@@ -6,7 +6,7 @@
  */
 
 import type { LanguageModelUsage } from 'ai';
-import { db } from '@/lib/db';
+import { db } from '@ais/db/client';
 import { FeatureResolver } from './feature-resolver';
 import { getAdapter } from './adapters';
 import { decryptApiKey } from '@ais/ai-engine';

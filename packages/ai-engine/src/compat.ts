@@ -7,7 +7,7 @@
  * 장기적으로는 모든 코드를 새 타입으로 마이그레이션하는 것을 권장합니다.
  */
 
-import { db } from '@/lib/db';
+import { db } from '@ais/db/client';
 import { getProviderRegistry } from './provider-registry';
 import { FeatureResolver } from './feature-resolver';
 import type {

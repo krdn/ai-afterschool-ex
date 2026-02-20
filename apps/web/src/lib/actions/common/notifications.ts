@@ -2,7 +2,7 @@
 
 import { verifySession } from '@/lib/dal';
 import { db } from '@/lib/db';
-import { checkAllBudgetThresholds, getBudgetSummary, type BudgetAlert } from '@/lib/ai/smart-routing';
+import { checkAllBudgetThresholds, getBudgetSummary, type BudgetAlert } from '@ais/ai-engine';
 import { ok, fail, type ActionResult } from '@/lib/errors/action-result';
 
 // =============================================================================

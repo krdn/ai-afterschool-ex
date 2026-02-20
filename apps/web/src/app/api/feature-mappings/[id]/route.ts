@@ -8,7 +8,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { verifySession } from '@/lib/dal';
 import { logger } from '@/lib/logger';
 import { db } from '@/lib/db';
-import type { FeatureMappingInput } from '@/lib/ai/types';
+import type { FeatureMappingInput } from '@ais/ai-engine';
 
 interface RouteParams {
   params: Promise<{ id: string }>;

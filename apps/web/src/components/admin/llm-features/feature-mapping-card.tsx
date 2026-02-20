@@ -31,7 +31,7 @@ import {
   ArrowRight,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import type { MatchMode, FallbackMode } from '@/lib/ai/types';
+import type { MatchMode, FallbackMode } from '@ais/ai-engine';
 
 // Feature 타입 한글 라벨 매핑
 const FEATURE_TYPE_LABELS: Record<string, string> = {

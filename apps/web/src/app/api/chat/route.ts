@@ -1,5 +1,5 @@
 import { verifySession } from '@/lib/dal';
-import { streamWithProvider } from '@/lib/ai/universal-router';
+import { streamWithProvider } from '@ais/ai-engine';
 import { db } from '@/lib/db';
 import { resolveMentions } from '@/lib/chat/mention-resolver';
 import { buildMentionContext } from '@/lib/chat/context-builder';

@@ -1,10 +1,10 @@
 'use server';
 
 import { verifySession } from '@/lib/dal';
-import { getUsageStats, getUsageStatsByProvider, getUsageStatsByFeature, getCurrentPeriodCost } from '@/lib/ai/usage-tracker';
-import { getMonthlyAggregations, getMonthlyTotalCost, getYearlyCostTrend } from '@/lib/ai/usage-aggregation';
+import { getUsageStats, getUsageStatsByProvider, getUsageStatsByFeature, getCurrentPeriodCost } from '@ais/ai-engine';
+import { getMonthlyAggregations, getMonthlyTotalCost, getYearlyCostTrend } from '@ais/ai-engine';
 import { db } from '@/lib/db';
-import type { ProviderName, FeatureType } from '@/lib/ai/providers';
+import type { ProviderName, FeatureType } from '@ais/ai-engine';
 import { ok, fail, type ActionResult } from "@/lib/errors/action-result";
 
 async function requireAuth() {

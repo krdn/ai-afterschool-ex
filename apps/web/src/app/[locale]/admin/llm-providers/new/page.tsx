@@ -8,8 +8,8 @@ import { Check } from 'lucide-react';
 import { AdminPageLayout } from '@/components/admin/admin-page-layout';
 import { TemplateSelector } from '@/components/admin/llm-providers/template-selector';
 import { ProviderForm } from '@/components/admin/llm-providers/provider-form';
-import { getProviderTemplates } from '@/lib/ai/templates';
-import type { ProviderTemplate } from '@/lib/ai/templates';
+import { getProviderTemplates } from '@ais/ai-engine';
+import type { ProviderTemplate } from '@ais/ai-engine';
 
 /**
  * 새 제공자 등록 페이지

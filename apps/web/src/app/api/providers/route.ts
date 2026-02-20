@@ -7,8 +7,8 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { verifySession } from '@/lib/dal';
-import { getProviderTemplate } from '@/lib/ai/templates';
-import type { ProviderInput, ProviderType, AuthType } from '@/lib/ai/types';
+import { getProviderTemplate } from '@ais/ai-engine';
+import type { ProviderInput, ProviderType, AuthType } from '@ais/ai-engine';
 import { db } from '@/lib/db';
 
 /**

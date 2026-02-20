@@ -11,7 +11,7 @@ import { PrismaClient, Prisma } from '@prisma/client';
 import {
   getProviderTemplates,
   ProviderTemplate,
-} from '../../ai/templates';
+} from '@ais/ai-engine';
 
 type DbClient = PrismaClient | Prisma.TransactionClient;
 

@@ -5,7 +5,7 @@
  * 예산 임계값 도달 시 알림을 발생시켜 비용 폭발을 방지합니다.
  */
 
-import { db } from '@/lib/db';
+import { db } from '@ais/db/client';
 import {
   COST_PER_MILLION_TOKENS,
   type ProviderName,

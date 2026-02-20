@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { Capability } from '@/lib/ai/types';
+import type { Capability } from '@ais/ai-engine';
 
 // Zod 스키마 정의
 export const providerFormSchema = z.object({
