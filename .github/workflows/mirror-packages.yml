@@ -156,14 +156,16 @@ jobs:
           CLONE_URL="https://x-access-token:${MIRROR_TOKEN}@github.com/${TARGET_REPO}.git"
           CLONE_DIR=$(mktemp -d)
 
-          # checkout이 설정한 global credential 제거 (MIRROR_TOKEN 간섭 방지)
+          # 모든 credential 간섭 제거
           git config --global --unset-all http.https://github.com/.extraheader 2>/dev/null || true
+          git config --global --unset-all credential.helper 2>/dev/null || true
 
-          # 독립 레포 clone
-          git clone "${CLONE_URL}" "${CLONE_DIR}"
+          # 독립 레포 clone (credential helper 비활성화)
+          git -c credential.helper= clone "${CLONE_URL}" "${CLONE_DIR}"
 
           # .git 보존, 나머지 파일 교체
           cd "${CLONE_DIR}"
+          git config credential.helper ""
           find . -maxdepth 1 -not -name '.git' -not -name '.' -exec rm -rf {} +
           cp -a "${WORK_DIR}/." .
 
@@ -173,12 +175,12 @@ jobs:
             exit 0
           fi
 
-          # 커밋 및 푸시 (push URL에 토큰 명시)
+          # 커밋 및 푸시
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
           git commit -m "sync: ${{ steps.commit-info.outputs.message }}" \
             -m "Source: ${MONOREPO_URL}/tree/main/${{ matrix.dir }}" \
             -m "Commit: ${MONOREPO_URL}/commit/${{ steps.commit-info.outputs.sha }}"
-          git push "${CLONE_URL}" main
+          git -c credential.helper= push "${CLONE_URL}" main
           echo "동기화 완료: ${TARGET_REPO}"
