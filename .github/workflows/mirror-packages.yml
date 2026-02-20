@@ -110,6 +110,8 @@ jobs:
     steps:
       - name: Checkout monorepo
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Get commit info
         id: commit-info
