@@ -1,5 +1,5 @@
-import { Prisma } from "@prisma/client"
-import { db } from "@/lib/db"
+import { Prisma } from '@ais/db'
+import { db } from "@ais/db/client"
 
 /**
  * VARK 설문 임시 저장 조회

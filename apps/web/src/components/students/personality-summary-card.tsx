@@ -5,7 +5,7 @@ import {
   getPersonalitySummary,
 } from "@/lib/db/student/personality-summary"
 import { GenerateActionButton } from "./personality-summary-card-client"
-import type { PersonalitySummary } from "@prisma/client"
+import type { PersonalitySummary } from '@ais/db'
 
 type PersonalitySummaryCardProps = {
   studentId: string

@@ -11,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import type { CounselingType } from '@prisma/client'
+import type { CounselingType } from '@ais/db'
 
 interface CounselingFiltersProps {
   canViewTeam: boolean

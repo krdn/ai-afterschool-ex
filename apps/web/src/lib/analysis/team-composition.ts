@@ -1,5 +1,5 @@
-import { db } from "@/lib/db"
-import { Prisma } from "@prisma/client"
+import { db } from "@ais/db/client"
+import { Prisma } from '@ais/db'
 import type {
   TeamComposition,
   TeamCompositionAnalysis,

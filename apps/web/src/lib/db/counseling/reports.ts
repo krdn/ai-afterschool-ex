@@ -1,4 +1,4 @@
-import { db } from '@/lib/db'
+import { db } from '@ais/db/client'
 
 /**
  * Get cached PDF for student (if exists and data version matches)

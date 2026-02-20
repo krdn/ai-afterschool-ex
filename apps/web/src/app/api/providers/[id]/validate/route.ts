@@ -6,7 +6,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { verifySession } from '@/lib/dal';
-import { db } from '@/lib/db';
+import { db } from '@ais/db/client';
 import { getProviderRegistry } from '@ais/ai-engine';
 
 interface RouteParams {

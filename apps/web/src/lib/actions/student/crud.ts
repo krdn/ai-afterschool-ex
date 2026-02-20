@@ -2,8 +2,8 @@
 
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
-import { Prisma } from "@prisma/client"
-import { db } from "@/lib/db"
+import { Prisma } from '@ais/db'
+import { db } from "@ais/db/client"
 import { verifySession } from "@/lib/dal"
 import {
   CreateStudentSchema,

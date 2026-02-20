@@ -1,8 +1,8 @@
 "use server"
 
 import { revalidatePath } from "next/cache"
-import { Prisma } from "@prisma/client"
-import { db } from "@/lib/db"
+import { Prisma } from '@ais/db'
+import { db } from "@ais/db/client"
 import { verifySession } from "@/lib/dal"
 import { calculateNameNumerology, generateNameInterpretation } from "@ais/analysis"
 import { getNameAnalysis as getNameAnalysisDb } from "@/lib/db/student/name-analysis"

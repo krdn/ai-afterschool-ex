@@ -9,7 +9,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { verifySession } from '@/lib/dal';
 import { getProviderTemplate } from '@ais/ai-engine';
 import type { ProviderInput, ProviderType, AuthType } from '@ais/ai-engine';
-import { db } from '@/lib/db';
+import { db } from '@ais/db/client';
 
 /**
  * GET /api/providers

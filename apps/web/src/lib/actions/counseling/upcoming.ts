@@ -1,7 +1,7 @@
 'use server'
 
 import { addDays, startOfDay, endOfDay } from 'date-fns'
-import { db } from '@/lib/db'
+import { db } from '@ais/db/client'
 import { verifySession } from '@/lib/dal'
 import { ok, fail, type ActionResult } from '@/lib/errors/action-result'
 

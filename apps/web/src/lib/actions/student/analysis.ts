@@ -1,9 +1,9 @@
 'use server';
 
-import { db as prisma } from "@/lib/db";
+import { db as prisma } from "@ais/db/client";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
-import { Prisma } from "@prisma/client";
+import { Prisma } from '@ais/db';
 import { eventBus } from "@/lib/events/event-bus";
 import { ok, fail, type ActionResult } from "@/lib/errors/action-result";
 

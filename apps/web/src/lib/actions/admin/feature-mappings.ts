@@ -10,7 +10,7 @@ import { revalidatePath } from 'next/cache';
 import { FeatureResolver } from '@ais/ai-engine';
 import { verifySession } from '@/lib/dal';
 import { logger } from '@/lib/logger';
-import { db } from '@/lib/db';
+import { db } from '@ais/db/client';
 import type {
   FeatureMappingInput,
   FeatureMappingConfig,

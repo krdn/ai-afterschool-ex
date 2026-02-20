@@ -1,5 +1,5 @@
-import { db as prisma } from '@/lib/db'
-import { Prisma, SubjectType } from '@prisma/client'
+import { db as prisma } from '@ais/db/client'
+import { Prisma, SubjectType } from '@ais/db'
 
 /**
  * 손금 분석 결과 생성

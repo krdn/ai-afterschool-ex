@@ -1,5 +1,5 @@
 import { verifySession } from "@/lib/dal"
-import { db } from "@/lib/db"
+import { db } from "@ais/db/client"
 import { listAssignmentProposals } from "@/lib/db/matching/assignment"
 import { getAssignmentResults } from "@/lib/actions/matching/assignment-results"
 import { AutoAssignmentSuggestion } from "@/components/assignment/auto-assignment-suggestion"

@@ -1,5 +1,5 @@
 import 'server-only'
-import { db } from '@/lib/db'
+import { db } from '@ais/db/client'
 import { logAuditAction } from '@/lib/dal'
 import type { TeacherRole } from '@/lib/db/common/rbac'
 import type {

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import { verifySession } from "@/lib/dal"
-import { db } from "@/lib/db"
+import { db } from "@ais/db/client"
 import { TeacherDetail } from "@/components/teachers/teacher-detail"
 
 type PageProps = {

@@ -5,7 +5,7 @@ import { after } from "next/server"
 import { generateWithVision, generateVisionWithSpecificProvider, FailoverError } from '@ais/ai-engine'
 import { FACE_READING_PROMPT, getFacePrompt, type FacePromptId } from "@ais/ai-engine/prompts"
 import { verifySession } from "@/lib/dal"
-import { db } from "@/lib/db"
+import { db } from "@ais/db/client"
 import { upsertFaceAnalysis, getFaceAnalysis } from "@/lib/db/analysis/face-analysis"
 import { extractJsonFromLLM } from "@ais/shared"
 import type { ProviderName } from '@ais/ai-engine'

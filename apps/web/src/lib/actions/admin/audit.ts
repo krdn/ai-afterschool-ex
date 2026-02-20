@@ -1,7 +1,7 @@
 'use server'
 
 import { verifySession } from '@/lib/dal'
-import { db } from '@/lib/db'
+import { db } from '@ais/db/client'
 import { getRBACPrisma } from '@/lib/db/common/rbac'
 
 export interface AuditLogEntry {

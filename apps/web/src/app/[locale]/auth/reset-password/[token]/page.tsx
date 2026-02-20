@@ -1,4 +1,4 @@
-import { db } from '@/lib/db'
+import { db } from '@ais/db/client'
 import { logSystemAction } from '@/lib/dal'
 import { headers } from 'next/headers'
 import { NewPasswordForm } from '@/components/auth/new-password-form'

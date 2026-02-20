@@ -1,5 +1,5 @@
-import { Prisma } from "@prisma/client"
-import { db } from "@/lib/db"
+import { Prisma } from '@ais/db'
+import { db } from "@ais/db/client"
 
 /**
  * 별자리 분석 결과 조회

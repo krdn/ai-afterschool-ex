@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache"
 import { after } from "next/server"
 import { verifySession } from "@/lib/dal"
-import { db } from "@/lib/db"
+import { db } from "@ais/db/client"
 import {
   getUnifiedPersonalityData,
   getPersonalitySummary,

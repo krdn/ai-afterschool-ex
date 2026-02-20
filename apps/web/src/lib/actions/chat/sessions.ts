@@ -1,6 +1,6 @@
 'use server';
 
-import { db } from '@/lib/db';
+import { db } from '@ais/db/client';
 import { verifySession } from '@/lib/dal';
 import { revalidatePath } from 'next/cache';
 

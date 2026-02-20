@@ -1,6 +1,6 @@
 import 'server-only'
-import { PrismaClient } from '@prisma/client'
-import { db } from '@/lib/db'
+import { PrismaClient } from '@ais/db'
+import { db } from '@ais/db/client'
 
 export type TeacherRole = 'DIRECTOR' | 'TEAM_LEADER' | 'MANAGER' | 'TEACHER'
 

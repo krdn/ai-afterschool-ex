@@ -11,7 +11,7 @@ import {
   isBefore,
 } from 'date-fns';
 import { ko } from 'date-fns/locale';
-import { Prisma } from '@prisma/client';
+import { Prisma } from '@ais/db';
 import type {
   FollowUpFilter,
   FollowUpItem,

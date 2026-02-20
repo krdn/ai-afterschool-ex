@@ -19,7 +19,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 import { addGrade, getGrades, deleteGrade } from "@/lib/actions/student/grade";
 import { toast } from "sonner";
 import { format } from "date-fns";
-import { GradeType } from "@prisma/client";
+import { GradeType } from '@ais/db';
 
 // 성적 타입 정의
 interface Grade {

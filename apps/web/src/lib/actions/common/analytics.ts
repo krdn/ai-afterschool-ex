@@ -2,7 +2,7 @@
 
 import { verifySession } from "@/lib/dal"
 import { getRBACPrisma } from "@/lib/db/common/rbac"
-import { db } from "@/lib/db"
+import { db } from "@ais/db/client"
 import { calculateImprovementRate, calculateGradeTrend } from "@/lib/analysis/grade-analytics"
 import { ok, fail, type ActionResult } from "@/lib/errors/action-result"
 

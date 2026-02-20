@@ -5,7 +5,7 @@
  * idempotent하게 설계되어 여러 번 실행핼도 중복 생성되지 않습니다.
  */
 
-import { PrismaClient, Prisma } from '@prisma/client';
+import { PrismaClient, Prisma } from '@ais/db';
 import type { FeatureMappingInput, FallbackMode } from '@ais/ai-engine';
 
 type DbClient = PrismaClient | Prisma.TransactionClient

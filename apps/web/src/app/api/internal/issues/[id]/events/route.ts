@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { db } from '@/lib/db'
-import type { IssueStatus, Prisma } from '@prisma/client'
+import { db } from '@ais/db/client'
+import type { IssueStatus, Prisma } from '@ais/db'
 
 const INTERNAL_API_SECRET = process.env.INTERNAL_API_SECRET
 

@@ -1,7 +1,7 @@
 "use server"
 
 import { revalidatePath } from "next/cache"
-import { db } from "@/lib/db"
+import { db } from "@ais/db/client"
 import { verifySession } from "@/lib/dal"
 import { calculateMbtiProgress as calculateProgress, scoreMbti } from "@ais/analysis"
 import {

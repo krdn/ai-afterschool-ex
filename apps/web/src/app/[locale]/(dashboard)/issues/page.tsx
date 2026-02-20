@@ -3,7 +3,7 @@ import { verifySession } from '@/lib/dal'
 import { getIssues } from '@/lib/actions/common/issues'
 import { IssueTable } from '@/components/issues/issue-table'
 import { IssueFilters } from '@/components/issues/issue-filters'
-import type { IssueStatus, IssueCategory } from '@prisma/client'
+import type { IssueStatus, IssueCategory } from '@ais/db'
 
 export const metadata = {
   title: '이슈 관리 | AI AfterSchool',

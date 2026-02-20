@@ -1,7 +1,7 @@
 'use server';
 
 import { verifySession } from '@/lib/dal';
-import { db } from '@/lib/db';
+import { db } from '@ais/db/client';
 import { checkAllBudgetThresholds, getBudgetSummary, type BudgetAlert } from '@ais/ai-engine';
 import { ok, fail, type ActionResult } from '@/lib/errors/action-result';
 

@@ -1,12 +1,12 @@
 "use server"
 
 import { verifySession, logAuditAction } from "@/lib/dal"
-import { db } from "@/lib/db"
+import { db } from "@ais/db/client"
 import { IssueSchema, type IssueFormState } from "@/lib/validations/issues"
 import { createGitHubIssue, ensureLabel, createIssueBranch, generateIssueBody, dispatchAutoFix } from "@/lib/github/services"
 import { CATEGORY_LABEL_MAP } from "@/lib/github/constants"
 import { isGitHubConfigured } from "@/lib/github/client"
-import { Prisma, type IssueCategory, type IssuePriority, type IssueStatus } from "@prisma/client"
+import { Prisma, type IssueCategory, type IssuePriority, type IssueStatus } from '@ais/db'
 import { okVoid, fail, type ActionVoidResult } from "@/lib/errors/action-result"
 
 /** getIssues에서 include 옵션에 맞는 Issue 타입 */

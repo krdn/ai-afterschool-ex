@@ -2,7 +2,7 @@ import 'server-only'
 import { CATEGORY_BRANCH_PREFIX, RATE_LIMIT_THRESHOLD } from './constants'
 import { getOctokit, getRepoConfig } from './client'
 import { logSystemAction } from '@/lib/dal'
-import type { IssueCategory } from '@prisma/client'
+import type { IssueCategory } from '@ais/db'
 
 /**
  * 제목을 URL-safe slug로 변환

@@ -4,7 +4,7 @@ import { headers } from 'next/headers'
 import { redirect } from 'next/navigation'
 import { cache } from 'react'
 import { decrypt, updateSession } from '@/lib/session'
-import { db } from '@/lib/db'
+import { db } from '@ais/db/client'
 import { setRLSSessionContext, getRBACPrisma } from '@/lib/db/common/rbac'
 
 export type VerifiedSession = {
@@ -106,8 +106,8 @@ export async function logAuditAction(params: {
 
   const headersList = await headers()
   const ipAddress = headersList.get('x-forwarded-for') ||
-                   headersList.get('x-real-ip') ||
-                   null
+    headersList.get('x-real-ip') ||
+    null
   const userAgent = headersList.get('user-agent') || null
 
   await db.auditLog.create({
@@ -116,7 +116,7 @@ export async function logAuditAction(params: {
       action: params.action,
       entityType: params.entityType,
       entityId: params.entityId,
-      changes: params.changes as import('@prisma/client').Prisma.InputJsonValue | undefined,
+      changes: params.changes as import('@ais/db').Prisma.InputJsonValue | undefined,
       ipAddress,
       userAgent,
     },
@@ -136,7 +136,7 @@ export async function logSystemAction(params: {
     data: {
       level: params.level,
       message: params.message,
-      context: params.context as import('@prisma/client').Prisma.InputJsonValue | undefined,
+      context: params.context as import('@ais/db').Prisma.InputJsonValue | undefined,
     },
   })
 }

@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/select'
 import { IssueSchema } from '@/lib/validations/issues'
 import { z } from 'zod'
-import type { IssueCategory } from '@prisma/client'
+import type { IssueCategory } from '@ais/db'
 
 export interface IssueFormData {
   title: string

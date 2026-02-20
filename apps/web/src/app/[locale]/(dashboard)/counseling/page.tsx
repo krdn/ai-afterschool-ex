@@ -7,7 +7,7 @@ import { MessageSquare } from "lucide-react"
 import { CounselingPageTabs } from "@/components/counseling/CounselingPageTabs"
 import { CounselingSearchBar } from "@/components/counseling/CounselingSearchBar"
 import { CounselingFilters } from "@/components/counseling/CounselingFilters"
-import type { CounselingType, Prisma } from "@prisma/client"
+import type { CounselingType, Prisma } from '@ais/db'
 import type { CounselingSessionData } from "@/components/counseling/types"
 
 type PageProps = {

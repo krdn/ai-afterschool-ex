@@ -3,7 +3,7 @@ import { format } from "date-fns"
 import { getPersonalitySummary } from "@/lib/db/student/personality-summary"
 import { generateCareerGuidance } from "@/lib/actions/student/personality-integration"
 import { CareerGuidanceRetryButton } from "./career-guidance-retry-button"
-import type { PersonalitySummary } from "@prisma/client"
+import type { PersonalitySummary } from '@ais/db'
 
 type CareerGuidanceResult = {
   coreTraits: string

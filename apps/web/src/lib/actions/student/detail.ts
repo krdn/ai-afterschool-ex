@@ -1,9 +1,9 @@
 "use server";
 
-import { db } from "@/lib/db";
+import { db } from "@ais/db/client";
 import { revalidatePath } from "next/cache";
 import { verifySession } from "@/lib/dal";
-import type { Prisma } from "@prisma/client";
+import type { Prisma } from '@ais/db';
 import {
     type PaginationParams,
     type PaginatedResult,

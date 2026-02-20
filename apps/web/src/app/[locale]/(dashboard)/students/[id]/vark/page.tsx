@@ -2,7 +2,7 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import { ChevronLeft } from "lucide-react"
 import { verifySession } from "@/lib/dal"
-import { db } from "@/lib/db"
+import { db } from "@ais/db/client"
 import { VarkSurveyForm } from "@/components/vark/survey-form"
 
 export default async function VarkSurveyPage({

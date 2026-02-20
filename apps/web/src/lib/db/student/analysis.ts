@@ -1,5 +1,5 @@
-import { Prisma, SubjectType } from "@prisma/client"
-import { db } from "@/lib/db"
+import { Prisma, SubjectType } from '@ais/db'
+import { db } from "@ais/db/client"
 
 export type CalculationStatus = {
   studentId: string

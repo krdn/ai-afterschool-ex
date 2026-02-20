@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import type { CounselingSession, Student, Teacher } from "@prisma/client"
+import type { CounselingSession, Student, Teacher } from '@ais/db'
 import { CounselingSessionCard, type CounselingSessionWithRelations } from "./CounselingSessionCard"
 import { CounselingSessionModal } from "./CounselingSessionModal"
 

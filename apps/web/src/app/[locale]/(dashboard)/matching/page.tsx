@@ -1,5 +1,5 @@
 import { verifySession } from "@/lib/dal"
-import { db } from "@/lib/db"
+import { db } from "@ais/db/client"
 import {
   Card,
   CardContent,

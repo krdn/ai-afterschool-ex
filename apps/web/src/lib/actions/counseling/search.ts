@@ -1,9 +1,9 @@
 'use server'
 
-import { db } from '@/lib/db'
+import { db } from '@ais/db/client'
 import { verifySession } from '@/lib/dal'
 import { getRBACPrisma } from '@/lib/db/common/rbac'
-import type { CounselingType, Prisma } from '@prisma/client'
+import type { CounselingType, Prisma } from '@ais/db'
 import { ok, fail, type ActionResult } from '@/lib/errors/action-result'
 
 /**

@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { format } from "date-fns"
 import { ko } from "date-fns/locale"
-import type { ParentCounselingReservation, ReservationStatus } from "@prisma/client"
+import type { ParentCounselingReservation, ReservationStatus } from '@ais/db'
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"

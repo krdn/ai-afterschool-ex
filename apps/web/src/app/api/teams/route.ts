@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getSession } from '@/lib/session'
-import { db } from '@/lib/db'
-import type { Team } from '@prisma/client'
+import { db } from '@ais/db/client'
+import type { Team } from '@ais/db'
 
 /**
  * GET /api/teams

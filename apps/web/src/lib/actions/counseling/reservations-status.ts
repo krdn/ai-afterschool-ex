@@ -7,7 +7,7 @@ import {
   deleteReservation,
   transitionReservationStatus,
 } from '@/lib/db/counseling/reservations'
-import { ReservationStatus } from '@prisma/client'
+import { ReservationStatus } from '@ais/db'
 import {
   reservationDeleteSchema,
   completeReservationSchema,

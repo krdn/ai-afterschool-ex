@@ -6,7 +6,7 @@ import {
   getUsageStatsByFeature,
 } from "@ais/ai-engine";
 import { getBudgetSummary } from "@ais/ai-engine";
-import { db } from "@/lib/db";
+import { db } from "@ais/db/client";
 import {
   UsageCharts,
   type DailyUsageData,

@@ -2,7 +2,7 @@
  * 시드 리셋 로직 (FK 역순 삭제)
  */
 
-import type { Prisma } from "@prisma/client"
+import type { Prisma } from '@ais/db'
 import type { SeedGroup } from "./constants"
 
 /** FK 역순으로 안전하게 삭제 */

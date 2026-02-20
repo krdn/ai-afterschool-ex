@@ -1,5 +1,5 @@
-import { db } from "@/lib/db"
-import type { SubjectType } from "@prisma/client"
+import { db } from "@ais/db/client"
+import type { SubjectType } from '@ais/db'
 import type { SubjectAnalyses } from "./types"
 import {
   parseMbtiPercentages,

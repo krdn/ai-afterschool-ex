@@ -2,7 +2,7 @@
 
 import { verifySession } from '@/lib/dal'
 import { getRBACPrisma } from '@/lib/db/common/rbac'
-import { db } from '@/lib/db'
+import { db } from '@ais/db/client'
 import type { TeacherRole } from '@/lib/db/common/rbac'
 import { ok, fail, type ActionResult } from "@/lib/errors/action-result"
 

@@ -1,6 +1,6 @@
 'use server'
 
-import { db } from "@/lib/db"
+import { db } from "@ais/db/client"
 import { getFaceAnalysis } from "@/lib/db/analysis/face-analysis"
 import { getPalmAnalysis } from "@/lib/db/analysis/palm-analysis"
 import { getMbtiAnalysisGeneric } from "@/lib/db/student/mbti-analysis"

@@ -1,7 +1,7 @@
 import 'server-only'
-import { Prisma } from '@prisma/client'
-import { db } from '@/lib/db'
-import { ReservationStatus, CounselingType } from '@prisma/client'
+import { Prisma } from '@ais/db'
+import { db } from '@ais/db/client'
+import { ReservationStatus, CounselingType } from '@ais/db'
 
 /**
  * 예약 생성 파라미터

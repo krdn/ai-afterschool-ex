@@ -3,7 +3,7 @@
 import { verifySession } from '@/lib/dal';
 import { getUsageStats, getUsageStatsByProvider, getUsageStatsByFeature, getCurrentPeriodCost } from '@ais/ai-engine';
 import { getMonthlyAggregations, getMonthlyTotalCost, getYearlyCostTrend } from '@ais/ai-engine';
-import { db } from '@/lib/db';
+import { db } from '@ais/db/client';
 import type { ProviderName, FeatureType } from '@ais/ai-engine';
 import { ok, fail, type ActionResult } from "@/lib/errors/action-result";
 

@@ -6,7 +6,7 @@
  * API 키(apiKeyEncrypted)는 포함하지 않습니다.
  */
 
-import type { Role, ParentRelation } from "@prisma/client"
+import type { Role, ParentRelation } from '@ais/db'
 
 // ---------------------------------------------------------------------------
 // 팀

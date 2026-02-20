@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic'
-import { db } from '@/lib/db'
+import { db } from '@ais/db/client'
 
 interface ReportButtonProps {
   studentId: string

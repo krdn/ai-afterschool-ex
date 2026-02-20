@@ -5,7 +5,7 @@ import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
 } from '@/components/ui/table'
 import { IssueStatusBadge, IssueCategoryBadge, IssuePriorityBadge } from './issue-status-badge'
-import type { IssueStatus, IssueCategory, IssuePriority } from '@prisma/client'
+import type { IssueStatus, IssueCategory, IssuePriority } from '@ais/db'
 
 interface IssueRow {
   id: string

@@ -6,7 +6,7 @@ import { AdminTabsWrapper, AdminTabsContent } from '@/components/admin/admin-tab
 import { getCurrentPeriodCost } from '@ais/ai-engine'
 import { getUsageStatsByProvider, getUsageStatsByFeature } from '@ais/ai-engine'
 import { getBudgetSummary } from '@ais/ai-engine'
-import { db } from '@/lib/db'
+import { db } from '@ais/db/client'
 import type { DailyUsageData, ProviderUsageData, FeatureUsageData } from '@/app/[locale]/(dashboard)/admin/llm-usage/usage-charts'
 import type { ProviderName } from '@ais/ai-engine'
 
@@ -17,7 +17,7 @@ import { DatabaseTab } from '@/components/admin/tabs/database-tab'
 import { AuditTab } from '@/components/admin/tabs/audit-tab'
 import { TeamsTab } from '@/components/admin/tabs/teams-tab'
 import { getTeams } from '@/lib/actions/common/teams'
-import { pool } from '@/lib/db'
+import { pool } from '@ais/db/client'
 
 // LLM Hub
 import { LLMHubTab } from '@/components/admin/tabs/llm-hub-tab'

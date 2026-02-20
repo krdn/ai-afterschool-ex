@@ -1,6 +1,6 @@
 import { verifySession } from '@/lib/dal';
 import { streamWithProvider } from '@ais/ai-engine';
-import { db } from '@/lib/db';
+import { db } from '@ais/db/client';
 import { resolveMentions } from '@/lib/chat/mention-resolver';
 import { buildMentionContext } from '@/lib/chat/context-builder';
 import type { MentionItem } from '@/lib/chat/mention-types';
@@ -100,7 +100,7 @@ export async function POST(request: Request) {
         role: 'user',
         content: trimmedPrompt,
         mentionedEntities: mentionedEntitiesData
-          ? (mentionedEntitiesData as import('@prisma/client').Prisma.InputJsonValue)
+          ? (mentionedEntitiesData as import('@ais/db').Prisma.InputJsonValue)
           : undefined,
       },
     });

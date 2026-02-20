@@ -1,5 +1,5 @@
-import { Prisma, SubjectType } from "@prisma/client"
-import { db } from "@/lib/db"
+import { Prisma, SubjectType } from '@ais/db'
+import { db } from "@ais/db/client"
 
 /**
  * MBTI 설문 임시 저장 조회

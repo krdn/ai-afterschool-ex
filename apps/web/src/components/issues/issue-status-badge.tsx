@@ -1,5 +1,5 @@
 import { Badge } from '@/components/ui/badge'
-import type { IssueStatus, IssueCategory, IssuePriority } from '@prisma/client'
+import type { IssueStatus, IssueCategory, IssuePriority } from '@ais/db'
 
 const STATUS_CONFIG: Record<IssueStatus, { label: string; className: string }> = {
   OPEN: { label: '열림', className: 'bg-blue-100 text-blue-800' },

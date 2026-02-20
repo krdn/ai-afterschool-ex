@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { db } from "@/lib/db"
+import { db } from "@ais/db/client"
 import { createSession } from "@/lib/session"
 
 const isDev = process.env.NODE_ENV === "development"

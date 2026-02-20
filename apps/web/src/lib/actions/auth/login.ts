@@ -4,7 +4,7 @@ import { redirect } from "next/navigation"
 import { headers } from "next/headers"
 import { randomBytes } from "crypto"
 import argon2 from "argon2"
-import { db } from "@/lib/db"
+import { db } from "@ais/db/client"
 import { createSession, deleteSession } from "@/lib/session"
 import { rateLimit } from "@/lib/rate-limit"
 import {

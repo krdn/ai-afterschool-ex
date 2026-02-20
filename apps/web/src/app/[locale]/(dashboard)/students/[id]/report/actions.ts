@@ -4,7 +4,7 @@ import React from 'react'
 import type { DocumentProps } from '@react-pdf/renderer'
 import { after } from 'next/server'
 import { verifySession } from '@/lib/dal'
-import { db } from '@/lib/db'
+import { db } from '@ais/db/client'
 import {
   getStudentReportPDF,
   shouldRegeneratePDF,

@@ -2,9 +2,9 @@
 
 import { redirect } from "next/navigation"
 import argon2 from "argon2"
-import { Prisma } from "@prisma/client"
+import { Prisma } from '@ais/db'
 import { verifySession } from "@/lib/dal"
-import { db } from "@/lib/db"
+import { db } from "@ais/db/client"
 import { TeacherSchema, UpdateTeacherSchema } from "@/lib/validations/teachers"
 import { NameHanjaSchema, type NameHanjaInput } from "@/lib/validations/students"
 import { ok, fail, okVoid, type ActionVoidResult } from "@/lib/errors/action-result"

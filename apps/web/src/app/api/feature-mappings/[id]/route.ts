@@ -7,7 +7,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { verifySession } from '@/lib/dal';
 import { logger } from '@/lib/logger';
-import { db } from '@/lib/db';
+import { db } from '@ais/db/client';
 import type { FeatureMappingInput } from '@ais/ai-engine';
 
 interface RouteParams {

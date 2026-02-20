@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { db, pool } from '@/lib/db'
+import { db, pool } from '@ais/db/client'
 import { existsSync, readdirSync, statSync } from 'fs'
 import { logger } from '@/lib/logger'
 import { join } from 'path'

@@ -1,4 +1,4 @@
-import type { Prisma } from '@prisma/client'
+import type { Prisma } from '@ais/db'
 import { GitBranch, Tag, RefreshCw, UserPlus, CheckCircle, Plus } from 'lucide-react'
 
 interface TimelineEvent {

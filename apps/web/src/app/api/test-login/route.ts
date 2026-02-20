@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import argon2 from 'argon2'
-import { db } from '@/lib/db'
+import { db } from '@ais/db/client'
 import { createSession } from '@/lib/session'
 
 export async function POST(req: NextRequest) {

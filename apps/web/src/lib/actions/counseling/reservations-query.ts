@@ -1,13 +1,13 @@
 'use server'
 
-import { db } from '@/lib/db'
+import { db } from '@ais/db/client'
 import { verifySession } from '@/lib/dal'
 import {
   getReservations,
   getReservationById,
   type GetReservationsParams,
 } from '@/lib/db/counseling/reservations'
-import { ReservationStatus } from '@prisma/client'
+import { ReservationStatus } from '@ais/db'
 import { ok, fail, type ActionResult } from '@/lib/errors/action-result'
 
 /**

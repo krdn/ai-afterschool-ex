@@ -1,4 +1,4 @@
-import { CounselingType } from '@prisma/client';
+import { CounselingType } from '@ais/db';
 
 /**
  * 선생님별 월간 상담 통계

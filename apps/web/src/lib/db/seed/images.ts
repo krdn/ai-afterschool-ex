@@ -4,7 +4,7 @@
  * 트랜잭션 밖에서 실행됩니다 — 외부 API는 DB 롤백 불가능하므로 의도적 분리.
  */
 
-import type { PrismaClient } from "@prisma/client"
+import type { PrismaClient } from '@ais/db'
 import path from "path"
 import fs from "fs"
 import type { SeedTeacher, SeedStudent } from "./data"

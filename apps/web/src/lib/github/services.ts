@@ -4,7 +4,7 @@ import { checkRateLimitFromHeaders } from './utils'
 import { CATEGORY_LABEL_MAP, LABEL_COLORS, LABEL_DESCRIPTIONS } from './constants'
 import { logSystemAction } from '@/lib/dal'
 import { generateBranchName } from './utils'
-import type { IssueCategory } from '@prisma/client'
+import type { IssueCategory } from '@ais/db'
 
 /**
  * GitHub Issue 생성

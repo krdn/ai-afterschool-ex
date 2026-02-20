@@ -1,7 +1,7 @@
 "use server"
 
 import { revalidatePath } from "next/cache"
-import { db } from "@/lib/db"
+import { db } from "@ais/db/client"
 import { verifySession } from "@/lib/dal"
 import { calculateCompatibilityScore, type CompatibilityScore } from "@ais/analysis"
 import { upsertCompatibilityResult } from "@/lib/db/matching/compatibility-result"

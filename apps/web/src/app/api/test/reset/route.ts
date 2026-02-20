@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getSession } from '@/lib/session'
-import { db } from '@/lib/db'
+import { db } from '@ais/db/client'
 
 /**
  * POST /api/test/reset

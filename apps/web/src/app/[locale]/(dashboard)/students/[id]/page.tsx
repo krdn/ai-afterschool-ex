@@ -5,7 +5,7 @@ import ReportTab from "@/components/students/tabs/report-tab";
 import { notFound } from "next/navigation";
 import StudentDetailActions from "@/components/students/student-detail-actions";
 import Link from "next/link";
-import { StudentImageType } from "@prisma/client";
+import { StudentImageType } from '@ais/db';
 
 export default async function StudentDetailPage(props: {
     params: Promise<{ id: string }>,

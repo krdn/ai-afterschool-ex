@@ -14,7 +14,7 @@ import {
   updateStudentSatisfaction,
   deleteStudentSatisfaction,
 } from "@/lib/db/common/performance"
-import type { GradeType, CounselingType } from "@prisma/client"
+import type { GradeType, CounselingType } from '@ais/db'
 import { okVoid, fail, type ActionVoidResult } from "@/lib/errors/action-result"
 
 /**

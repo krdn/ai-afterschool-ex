@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
 import { ReservationCard, type ReservationWithRelations } from "./ReservationCard"
-import type { ReservationStatus } from "@prisma/client"
+import type { ReservationStatus } from '@ais/db'
 
 interface ReservationListProps {
   reservations: ReservationWithRelations[]

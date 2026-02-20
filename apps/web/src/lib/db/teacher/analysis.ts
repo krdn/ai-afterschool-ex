@@ -1,5 +1,5 @@
-import { Prisma } from "@prisma/client"
-import { db } from "@/lib/db"
+import { Prisma } from '@ais/db'
+import { db } from "@ais/db/client"
 
 // ---------------------------------------------------------------------------
 // 선생님 사주 분석 이력

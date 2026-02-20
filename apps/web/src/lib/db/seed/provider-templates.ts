@@ -7,7 +7,7 @@
  * 실행: npx tsx src/lib/db/seed-provider-templates.ts
  */
 
-import { PrismaClient, Prisma } from '@prisma/client';
+import { PrismaClient, Prisma } from '@ais/db';
 import {
   getProviderTemplates,
   ProviderTemplate,

@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache"
 import { z } from "zod"
 import { verifySession } from "@/lib/dal"
-import { db } from "@/lib/db"
+import { db } from "@ais/db/client"
 import { getUnifiedPersonalityData, upsertPersonalitySummary } from "@/lib/db/student/personality-summary"
 import { getCompatibilityResult } from "@/lib/db/matching/compatibility-result"
 import { generateWithProvider, FailoverError } from '@ais/ai-engine'

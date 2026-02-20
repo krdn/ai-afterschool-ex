@@ -1,5 +1,5 @@
-import { Prisma, SubjectType } from "@prisma/client"
-import { db } from "@/lib/db"
+import { Prisma, SubjectType } from '@ais/db'
+import { db } from "@ais/db/client"
 
 /**
  * 이름 분석 결과 조회

@@ -1,7 +1,7 @@
-import { Prisma } from "@prisma/client"
-import { db } from "@/lib/db"
+import { Prisma } from '@ais/db'
+import { db } from "@ais/db/client"
 import { getRBACPrisma } from "./rbac"
-import type { GradeType, CounselingType } from "@prisma/client"
+import type { GradeType, CounselingType } from '@ais/db'
 
 /**
  * GradeHistory 생성 페이로드

@@ -1,4 +1,4 @@
-import type { IssueCategory } from '@prisma/client'
+import type { IssueCategory } from '@ais/db'
 
 /** IssueCategory → GitHub label 이름 매핑 */
 export const CATEGORY_LABEL_MAP: Record<IssueCategory, string> = {

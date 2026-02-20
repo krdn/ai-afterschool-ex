@@ -1,7 +1,7 @@
 'use server'
 
 import { verifySession } from '@/lib/dal'
-import { db } from '@/lib/db'
+import { db } from '@ais/db/client'
 import type { AuditLogEntry } from '@/lib/actions/admin/audit'
 import { ok, fail, type ActionResult } from '@/lib/errors/action-result'
 

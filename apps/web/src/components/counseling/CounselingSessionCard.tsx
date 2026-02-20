@@ -1,4 +1,4 @@
-import type { CounselingSession, Student, Teacher } from "@prisma/client"
+import type { CounselingSession, Student, Teacher } from '@ais/db'
 
 export type CounselingSessionWithRelations = CounselingSession & {
   student: Student

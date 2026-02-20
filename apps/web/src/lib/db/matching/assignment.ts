@@ -4,8 +4,8 @@
  * 자동 배정 제안의 생성, 조회, 적용 기능을 제공합니다.
  */
 
-import { Prisma } from "@prisma/client"
-import { db } from "@/lib/db"
+import { Prisma } from '@ais/db'
+import { db } from "@ais/db/client"
 import type { Assignment } from "@/lib/optimization/auto-assignment"
 import type { CompatibilityScore } from "@ais/analysis"
 

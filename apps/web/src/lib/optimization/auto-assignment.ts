@@ -6,7 +6,7 @@
  * 최적의 배정을 찾습니다.
  */
 
-import { db } from "@/lib/db"
+import { db } from "@ais/db/client"
 import { verifySession } from "@/lib/dal"
 import { calculateCompatibilityScore } from "@ais/analysis"
 import type { CompatibilityScore } from "@ais/analysis"

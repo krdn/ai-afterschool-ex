@@ -11,7 +11,7 @@ import { IssueAssignSelect } from './issue-assign-select'
 import { updateIssueStatus } from '@/lib/actions/common/issues'
 import { toast } from 'sonner'
 import { ExternalLink } from 'lucide-react'
-import type { IssueStatus, IssueCategory, IssuePriority } from '@prisma/client'
+import type { IssueStatus, IssueCategory, IssuePriority } from '@ais/db'
 
 const STATUS_OPTIONS: { value: IssueStatus; label: string }[] = [
   { value: 'OPEN', label: '열림' },

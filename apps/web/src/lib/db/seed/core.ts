@@ -5,7 +5,7 @@
  * 멱등성: upsert 패턴으로 여러 번 실행해도 안전합니다.
  */
 
-import type { Prisma, PrismaClient } from "@prisma/client"
+import type { Prisma, PrismaClient } from '@ais/db'
 import argon2 from "argon2"
 import {
   SEED_TEAMS,

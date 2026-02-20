@@ -1,9 +1,9 @@
 'use server';
 
-import { db as prisma } from "@/lib/db";
+import { db as prisma } from "@ais/db/client";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
-import { GradeType } from "@prisma/client";
+import { GradeType } from '@ais/db';
 import { getCurrentTeacher } from "@/lib/dal";
 import { okVoid, fail, type ActionVoidResult } from "@/lib/errors/action-result";
 

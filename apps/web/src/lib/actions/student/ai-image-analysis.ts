@@ -5,7 +5,7 @@ import { after } from "next/server"
 import { generateWithVision, generateVisionWithSpecificProvider, FailoverError } from '@ais/ai-engine'
 import { FACE_READING_PROMPT, PALM_READING_PROMPT, getFacePrompt, type FacePromptId, getPalmPrompt, type PalmPromptId } from "@ais/ai-engine/prompts"
 import { verifySession } from "@/lib/dal"
-import { db } from "@/lib/db"
+import { db } from "@ais/db/client"
 import { extractJsonFromLLM } from "@ais/shared"
 import { upsertFaceAnalysis } from "@/lib/db/analysis/face-analysis"
 import { upsertPalmAnalysis } from "@/lib/db/analysis/palm-analysis"

@@ -1,8 +1,8 @@
 "use server"
 
 import { revalidatePath } from "next/cache"
-import { Prisma } from "@prisma/client"
-import { db } from "@/lib/db"
+import { Prisma } from '@ais/db'
+import { db } from "@ais/db/client"
 import { verifySession } from "@/lib/dal"
 import { calculateSaju, generateSajuInterpretation, type SajuResult } from "@ais/analysis"
 import {

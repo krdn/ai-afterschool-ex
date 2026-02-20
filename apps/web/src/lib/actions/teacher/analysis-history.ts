@@ -1,6 +1,6 @@
 'use server'
 
-import { db as prisma } from "@/lib/db"
+import { db as prisma } from "@ais/db/client"
 import { ok, fail, type ActionResult } from "@/lib/errors/action-result"
 
 /**
