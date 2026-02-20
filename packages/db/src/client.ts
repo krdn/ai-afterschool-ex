@@ -28,7 +28,10 @@ function getPrismaClient(): PrismaClient {
   if (!databaseUrl) {
     // 빌드 시 DATABASE_URL이 없으면 더미 클라이언트 반환
     if (process.env.NEXT_PHASE === "phase-production-build") {
+      const dummyPool = new Pool(); // lazy initialization
+      const dummyAdapter = new PrismaPg(dummyPool);
       return new PrismaClient({
+        adapter: dummyAdapter,
         log: ["error"],
       });
     }
