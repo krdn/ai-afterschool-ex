@@ -40,7 +40,6 @@ jobs:
       - name: Generate Prisma clients
         run: |
           pnpm --filter @ais/db exec prisma generate
-          pnpm --filter @ais/web exec prisma generate
 
       - name: Build all packages
         run: pnpm build
@@ -97,7 +96,6 @@ jobs:
       - name: Generate Prisma clients
         run: |
           pnpm --filter @ais/db exec prisma generate
-          pnpm --filter @ais/web exec prisma generate
 
       - name: Build packages
         run: pnpm build
@@ -153,7 +151,6 @@ jobs:
       - name: Generate Prisma clients
         run: |
           pnpm --filter @ais/db exec prisma generate
-          pnpm --filter @ais/web exec prisma generate
 
       - name: Build packages
         run: pnpm build
@@ -163,8 +160,8 @@ jobs:
 
       - name: Run DB migrations & seed
         run: |
-          pnpm --filter @ais/web exec prisma migrate deploy
-          pnpm --filter @ais/web exec prisma db seed -- --preset test
+          pnpm --filter @ais/db exec prisma migrate deploy
+          pnpm --filter @ais/db run db:seed -- --preset test
 
       - name: Run E2E tests
         run: pnpm --filter @ais/web test:e2e

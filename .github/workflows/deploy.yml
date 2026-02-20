@@ -42,7 +42,6 @@ jobs:
       - name: Generate Prisma clients
         run: |
           pnpm --filter @ais/db exec prisma generate
-          pnpm --filter @ais/web exec prisma generate
 
       - name: Build Packages
         run: pnpm build
@@ -65,7 +64,7 @@ jobs:
       - name: Build Web Image
         run: |
           docker build -t ${{ env.IMAGE_NAME }}:${{ github.sha }} -t ${{ env.IMAGE_NAME }}:latest -f apps/web/Dockerfile --target production .
-      
+
       - name: Build Migrate Image
         run: |
           docker build -t ais-migrate:${{ github.sha }} -t ais-migrate:latest -f apps/web/Dockerfile --target migrate .
@@ -143,4 +142,3 @@ jobs:
         run: |
           ssh ${{ env.DEPLOY_USER }}@${{ env.DEPLOY_HOST }} \
             "docker image prune -f --filter 'until=168h'"
-
