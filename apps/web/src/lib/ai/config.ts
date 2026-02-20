@@ -1,5 +1,5 @@
 import { db } from '@/lib/db';
-import { encryptApiKey, decryptApiKey, maskApiKey } from './encryption';
+import { encryptApiKey, decryptApiKey, maskApiKey } from '@ais/ai-engine';
 import { PROVIDER_CONFIGS, type ProviderName, type FeatureType } from './providers';
 import { providerTypeToName, type ProviderType } from './types';
 

@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache"
 import { db } from "@/lib/db"
 import { verifySession } from "@/lib/dal"
-import { calculateProgress, scoreMbti } from "@/lib/analysis/mbti-scoring"
+import { calculateMbtiProgress as calculateProgress, scoreMbti } from "@ais/analysis"
 import {
   deleteMbtiDraft,
   getMbtiAnalysis as getMbtiAnalysisDb,
@@ -12,8 +12,7 @@ import {
   upsertMbtiDraft,
 } from "@/lib/db/student/mbti-analysis"
 import { generateWithProvider, generateWithSpecificProvider } from "@/lib/ai/universal-router"
-import { MBTI_INTERPRETATION_PROMPT } from "@/lib/ai/prompts"
-import { getMbtiPrompt, type MbtiPromptId } from "@/lib/ai/mbti-prompts"
+import { MBTI_INTERPRETATION_PROMPT, getMbtiPrompt, type MbtiPromptId } from "@ais/ai-engine/prompts"
 import type { ProviderName } from "@/lib/ai/providers/types"
 import { eventBus } from "@/lib/events/event-bus"
 import { ok, fail, type ActionResult } from "@/lib/errors/action-result"

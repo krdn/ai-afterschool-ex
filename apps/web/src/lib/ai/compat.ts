@@ -16,7 +16,7 @@ import type {
   ProviderConfig as LegacyProviderConfig,
   FeatureConfig as LegacyFeatureConfig,
 } from './providers/types';
-import { decryptApiKey } from './encryption';
+import { decryptApiKey } from '@ais/ai-engine';
 
 // =============================================================================
 // 타입 별칭 (기존 union type -> string)

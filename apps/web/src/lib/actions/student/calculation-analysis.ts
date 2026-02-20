@@ -7,15 +7,15 @@ import { verifySession } from "@/lib/dal"
 import {
   calculateSaju,
   generateSajuInterpretation,
-} from "@/lib/analysis/saju"
+} from "@ais/analysis"
 import {
   calculateNameNumerology,
   generateNameInterpretation,
-} from "@/lib/analysis/name-numerology"
+} from "@ais/analysis"
 import {
   coerceHanjaSelections,
   selectionsToHanjaName,
-} from "@/lib/analysis/hanja-strokes"
+} from "@ais/analysis"
 import {
   clearStudentRecalculationNeeded,
   createSajuHistory,
@@ -25,7 +25,7 @@ import {
   upsertSajuAnalysis,
 } from "@/lib/db/student/analysis"
 import { generateWithProvider, generateWithSpecificProvider } from "@/lib/ai/universal-router"
-import { getPromptDefinition, buildPromptFromTemplate, type AnalysisPromptId, type StudentInfo } from "@/lib/ai/saju-prompts"
+import { getSajuPromptDefinition as getPromptDefinition, buildSajuPromptFromTemplate as buildPromptFromTemplate, type AnalysisPromptId, type SajuStudentInfo as StudentInfo } from "@ais/ai-engine/prompts"
 import { getPresetByKey } from "@/lib/db/analysis/saju-prompt-preset"
 import type { ProviderName } from "@/lib/ai/providers/types"
 import { eventBus } from "@/lib/events/event-bus"

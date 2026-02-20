@@ -10,7 +10,7 @@ import {
     normalizePaginationParams,
     getPrismaSkipTake,
     buildPaginatedResult,
-} from "@/lib/utils/pagination";
+} from "@ais/shared";
 
 type StudentWithRelations = Prisma.StudentGetPayload<{
     include: { teacher: true; images: true }

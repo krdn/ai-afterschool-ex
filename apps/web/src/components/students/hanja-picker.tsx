@@ -7,7 +7,7 @@ import {
   getStrokeInfo,
   selectionsToHanjaName,
   type HanjaSelection,
-} from "@/lib/analysis/hanja-strokes"
+} from "@ais/analysis"
 import { Label } from "@/components/ui/label"
 import {
   Select,

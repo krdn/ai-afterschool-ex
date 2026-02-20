@@ -10,7 +10,7 @@ import type {
   RoleDistribution,
   DiversityScore,
   Recommendation,
-} from "./team-composition-types"
+} from "@ais/matching"
 
 const SUBJECTS = ["수학", "영어", "국어", "과학", "사회"] as const
 const GRADES = ["중1", "중2", "중3", "고1", "고2", "고3"] as const

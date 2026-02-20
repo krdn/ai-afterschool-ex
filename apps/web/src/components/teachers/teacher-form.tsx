@@ -13,7 +13,7 @@ import {
 } from "@/components/students/student-image-uploader"
 import {
   coerceHanjaSelections,
-} from "@/lib/analysis/hanja-strokes"
+} from "@ais/analysis"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"

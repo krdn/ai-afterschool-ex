@@ -7,7 +7,7 @@ import { db } from "@/lib/db"
 import { getUnifiedPersonalityData, upsertPersonalitySummary } from "@/lib/db/student/personality-summary"
 import { getCompatibilityResult } from "@/lib/db/matching/compatibility-result"
 import { generateWithProvider, FailoverError } from "@/lib/ai/universal-router"
-import { buildCounselingSummaryPrompt, buildPersonalitySummaryPrompt } from "@/lib/ai/counseling-prompts"
+import { buildCounselingSummaryPrompt, buildPersonalitySummaryPrompt } from "@ais/ai-engine/prompts"
 import { ok, fail, okVoid, type ActionResult, type ActionVoidResult } from "@/lib/errors/action-result"
 
 // Validation schemas

@@ -20,7 +20,7 @@ import {
   getCounselingTypeDistributionAction,
   getMonthlyTrendAction,
 } from "@/lib/actions/counseling/stats"
-import { getDateRangeFromPreset } from "@/lib/utils/date-range"
+import { getDateRangeFromPreset } from "@ais/shared"
 import { getFollowUpsAction, completeFollowUpAction } from "@/lib/actions/counseling/follow-up"
 import { toast } from "sonner"
 

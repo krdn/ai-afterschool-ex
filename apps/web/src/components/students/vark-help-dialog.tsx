@@ -12,7 +12,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { getPromptOptions } from "@/lib/ai/vark-prompts"
+import { getVarkPromptOptions as getPromptOptions } from "@ais/ai-engine/prompts"
 
 export function VarkHelpDialog() {
   const prompts = getPromptOptions()

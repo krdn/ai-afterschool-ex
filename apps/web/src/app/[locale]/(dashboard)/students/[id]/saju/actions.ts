@@ -5,11 +5,11 @@ import { getAnalysisHistory } from "@/lib/actions/student/analysis"
 import { getSajuHistoryList } from "@/lib/db/student/analysis"
 import { getActivePresets, getPresetByKey, seedBuiltInPresets } from "@/lib/db/analysis/saju-prompt-preset"
 import {
-  getBuiltInSeedData,
-  getPromptPreviewText,
+  getSajuSeedData as getBuiltInSeedData,
+  getSajuPromptPreviewText as getPromptPreviewText,
   type AnalysisPromptMeta,
   type AnalysisPromptId,
-} from "@/lib/ai/saju-prompts"
+} from "@ais/ai-engine/prompts"
 
 export async function runSajuAnalysisAction(
   studentId: string,

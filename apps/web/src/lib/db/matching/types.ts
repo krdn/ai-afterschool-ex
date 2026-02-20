@@ -1,6 +1,6 @@
-import type { MbtiPercentages } from "@/lib/analysis/mbti-scoring"
-import type { SajuResult } from "@/lib/analysis/saju"
-import type { NameNumerologyResult } from "@/lib/analysis/name-numerology"
+import type { MbtiPercentages } from "@ais/analysis"
+import type { SajuResult } from "@ais/analysis"
+import type { NameNumerologyResult } from "@ais/analysis"
 
 /**
  * 단일 대상(학생 또는 선생님)의 분석 데이터 조회 결과

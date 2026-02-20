@@ -8,11 +8,11 @@
 
 import { db } from "@/lib/db"
 import { verifySession } from "@/lib/dal"
-import { calculateCompatibilityScore } from "@/lib/analysis/compatibility-scoring"
-import type { CompatibilityScore } from "@/lib/analysis/compatibility-scoring"
-import type { MbtiPercentages } from "@/lib/analysis/mbti-scoring"
-import type { SajuResult } from "@/lib/analysis/saju"
-import type { NameNumerologyResult } from "@/lib/analysis/name-numerology"
+import { calculateCompatibilityScore } from "@ais/analysis"
+import type { CompatibilityScore } from "@ais/analysis"
+import type { MbtiPercentages } from "@ais/analysis"
+import type { SajuResult } from "@ais/analysis"
+import type { NameNumerologyResult } from "@ais/analysis"
 
 /**
  * 단일 배정 결과

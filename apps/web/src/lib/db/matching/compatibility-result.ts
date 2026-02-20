@@ -1,6 +1,6 @@
 import { Prisma } from "@prisma/client"
 import { db } from "@/lib/db"
-import type { CompatibilityScore } from "@/lib/analysis/compatibility-scoring"
+import type { CompatibilityScore } from "@ais/analysis"
 
 /**
  * CompatibilityResult 생성/업데이트 페이로드

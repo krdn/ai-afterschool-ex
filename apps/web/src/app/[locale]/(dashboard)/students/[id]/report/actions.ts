@@ -14,8 +14,8 @@ import {
   fetchReportData,
 } from '@/lib/db/counseling/reports'
 import { getPersonalitySummary } from '@/lib/db/student/personality-summary'
-import { ConsultationReport } from '@/lib/pdf/templates/consultation-report'
-import { pdfToBuffer, generateReportFilename } from '@/lib/pdf/generator'
+import { ConsultationReport } from '@ais/report'
+import { pdfToBuffer, generateReportFilename } from '@ais/report'
 import type { ConsultationReportData } from '@ais/report'
 import { createPDFStorage } from '@/lib/storage/factory'
 import { revalidatePath } from 'next/cache'

@@ -3,11 +3,11 @@
 import { revalidatePath } from "next/cache"
 import { after } from "next/server"
 import { generateWithVision, FailoverError } from "@/lib/ai/universal-router"
-import { PALM_READING_PROMPT } from "@/lib/ai/prompts"
+import { PALM_READING_PROMPT } from "@ais/ai-engine/prompts"
 import { verifySession } from "@/lib/dal"
 import { db } from "@/lib/db"
 import { upsertPalmAnalysis, getPalmAnalysis } from "@/lib/db/analysis/palm-analysis"
-import { extractJsonFromLLM } from "@/lib/utils/extract-json"
+import { extractJsonFromLLM } from "@ais/shared"
 import { eventBus } from "@/lib/events/event-bus"
 import { ok, type ActionResult } from "@/lib/errors/action-result"
 

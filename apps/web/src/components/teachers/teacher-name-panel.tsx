@@ -5,13 +5,13 @@ import { format } from "date-fns"
 import { ko } from "date-fns/locale"
 import { Sparkles, AlertCircle, Type, Trash2, Loader2 } from "lucide-react"
 import { runTeacherNameAnalysis, generateTeacherNameLLMInterpretation } from "@/lib/actions/teacher/analysis"
-import type { NameNumerologyResult } from "@/lib/analysis/name-numerology"
+import type { NameNumerologyResult } from "@ais/analysis"
 import {
   coerceHanjaSelections,
   getStrokeInfo,
   normalizeHanjaSelections,
   selectionsToHanjaName,
-} from "@/lib/analysis/hanja-strokes"
+} from "@ais/analysis"
 import type { ProviderName } from "@/lib/ai/providers/types"
 import { ProviderSelector } from "@/components/students/provider-selector"
 import { PromptSelector } from "@/components/students/prompt-selector"

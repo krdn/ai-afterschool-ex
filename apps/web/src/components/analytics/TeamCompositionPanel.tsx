@@ -1,4 +1,4 @@
-import type { TeamCompositionAnalysis } from "@/lib/analysis/team-composition-types"
+import type { TeamCompositionAnalysis } from "@ais/matching"
 import { analyzeTeamComposition } from "@/lib/analysis/team-composition"
 import { getTeamById } from "@/lib/actions/common/teams"
 import { PersonalityDiversityChart } from "./PersonalityDiversityChart"

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import type { TeamCompositionAnalysis } from "@/lib/analysis/team-composition-types"
+import type { TeamCompositionAnalysis } from "@ais/matching"
 import { analyzeTeamComposition } from "@/lib/analysis/team-composition"
 import { getTeamById } from "@/lib/actions/common/teams"
 import { TeamCompositionPanel } from "@/components/analytics/TeamCompositionPanel"

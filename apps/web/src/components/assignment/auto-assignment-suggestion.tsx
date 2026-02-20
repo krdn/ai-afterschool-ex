@@ -7,7 +7,7 @@ import {
   applyAutoAssignment,
 } from '@/lib/actions/matching/assignment'
 import type { Assignment } from '@/lib/optimization/auto-assignment'
-import type { FairnessMetrics } from '@/lib/analysis/fairness-metrics'
+import type { FairnessMetrics } from '@ais/matching'
 import { Button } from '@/components/ui/button'
 import {
   Card,

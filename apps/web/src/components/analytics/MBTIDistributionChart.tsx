@@ -1,7 +1,7 @@
 "use client"
 
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from "recharts"
-import type { MBTIDistribution } from "@/lib/analysis/team-composition-types"
+import type { MBTIDistribution } from "@ais/matching"
 
 interface MBTIChartDataPoint {
   type: string

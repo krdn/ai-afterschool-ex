@@ -12,7 +12,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { getPromptOptions } from "@/lib/ai/mbti-prompts"
+import { getMbtiPromptOptions as getPromptOptions } from "@ais/ai-engine/prompts"
 
 export function MbtiHelpDialog() {
   const prompts = getPromptOptions()

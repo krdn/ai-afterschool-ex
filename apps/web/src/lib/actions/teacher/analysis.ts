@@ -4,22 +4,19 @@ import { revalidatePath } from "next/cache"
 import { Prisma } from "@prisma/client"
 import { db } from "@/lib/db"
 import { verifySession } from "@/lib/dal"
-import { calculateSaju, generateSajuInterpretation, type SajuResult } from "@/lib/analysis/saju"
+import { calculateSaju, generateSajuInterpretation, type SajuResult } from "@ais/analysis"
 import {
   calculateNameNumerology,
   generateNameInterpretation,
-} from "@/lib/analysis/name-numerology"
-import { coerceHanjaSelections, selectionsToHanjaName } from "@/lib/analysis/hanja-strokes"
-import { scoreMbti } from "@/lib/analysis/mbti-scoring"
+} from "@ais/analysis"
+import { coerceHanjaSelections, selectionsToHanjaName } from "@ais/analysis"
+import { scoreMbti } from "@ais/analysis"
 import { upsertSajuAnalysis, upsertNameAnalysis } from "@/lib/db/student/analysis"
 import { createTeacherSajuHistory } from "@/lib/db/teacher/analysis"
 import { upsertMbtiAnalysisGeneric, getMbtiAnalysisGeneric } from "@/lib/db/student/mbti-analysis"
 import { getNameAnalysis } from "@/lib/db/student/name-analysis"
 import { generateWithProvider, generateWithSpecificProvider } from "@/lib/ai/universal-router"
-import { MBTI_INTERPRETATION_PROMPT } from "@/lib/ai/prompts"
-import { getMbtiPrompt, type MbtiPromptId } from "@/lib/ai/mbti-prompts"
-import { getNamePrompt, type NamePromptId } from "@/lib/ai/name-prompts"
-import { getPromptDefinition, type AnalysisPromptId } from "@/lib/ai/saju-prompts"
+import { MBTI_INTERPRETATION_PROMPT, getMbtiPrompt, type MbtiPromptId, getNamePrompt, type NamePromptId, getSajuPromptDefinition as getPromptDefinition, type AnalysisPromptId } from "@ais/ai-engine/prompts"
 import { getPresetByKey } from "@/lib/db/analysis/saju-prompt-preset"
 import type { ProviderName } from "@/lib/ai/providers/types"
 import { eventBus } from "@/lib/events/event-bus"
@@ -164,7 +161,7 @@ export async function runTeacherSajuAnalysis(
       }
       if (dbPreset?.isActive && dbPreset.promptTemplate) {
         // 선생님 프롬프트: 학생 정보 대신 선생님 정보를 넣어 빌드
-        const { buildPromptFromTemplate } = await import("@/lib/ai/saju-prompts")
+        const { buildSajuPromptFromTemplate: buildPromptFromTemplate } = await import("@ais/ai-engine/prompts")
         prompt = buildPromptFromTemplate(dbPreset.promptTemplate, sajuResult, teacherInfo as never, additionalRequest)
       } else {
         const promptDef = getPromptDefinition(resolvedPromptId as AnalysisPromptId)

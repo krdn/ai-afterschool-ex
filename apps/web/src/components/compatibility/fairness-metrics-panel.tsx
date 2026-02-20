@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
-import type { FairnessMetrics } from "@/lib/analysis/fairness-metrics"
+import type { FairnessMetrics } from "@ais/matching"
 import {
   CheckCircle2,
   AlertCircle,

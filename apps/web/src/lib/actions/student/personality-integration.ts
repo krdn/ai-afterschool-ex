@@ -10,9 +10,9 @@ import {
   upsertPersonalitySummary,
 } from "@/lib/db/student/personality-summary"
 import { generateWithProvider, FailoverError } from "@/lib/ai/universal-router"
-import { buildLearningStrategyPrompt, buildCareerGuidancePrompt } from "@/lib/ai/integration-prompts"
+import { buildLearningStrategyPrompt, buildCareerGuidancePrompt } from "@ais/ai-engine/prompts"
 import { LearningStrategySchema, CareerGuidanceSchema } from "@/lib/validations/personality"
-import { extractJsonFromLLM } from "@/lib/utils/extract-json"
+import { extractJsonFromLLM } from "@ais/shared"
 import { ok, fail, type ActionResult } from "@/lib/errors/action-result"
 
 /**

@@ -5,7 +5,7 @@ import { toast } from "sonner"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { assignStudentToTeacher } from "@/lib/actions/matching/assignment"
-import type { CompatibilityScore } from "@/lib/analysis/compatibility-scoring"
+import type { CompatibilityScore } from "@ais/analysis"
 import { CompatibilityScoreCard } from "./compatibility-score-card"
 import { CompatibilityRadarChart } from "./compatibility-radar-chart"
 

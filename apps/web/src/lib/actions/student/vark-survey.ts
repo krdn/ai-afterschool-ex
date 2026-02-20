@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache"
 import { db } from "@/lib/db"
 import { verifySession } from "@/lib/dal"
-import { calculateProgress, scoreVark } from "@/lib/analysis/vark-scoring"
+import { calculateVarkProgress as calculateProgress, scoreVark } from "@ais/analysis"
 import {
   deleteVarkDraft,
   getVarkAnalysis as getVarkAnalysisDb,
@@ -12,7 +12,7 @@ import {
   upsertVarkDraft,
 } from "@/lib/db/student/vark-analysis"
 import { generateWithProvider, generateWithSpecificProvider } from "@/lib/ai/universal-router"
-import { getVarkPrompt, type VarkPromptId } from "@/lib/ai/vark-prompts"
+import { getVarkPrompt, type VarkPromptId } from "@ais/ai-engine/prompts"
 import type { ProviderName } from "@/lib/ai/providers/types"
 import { eventBus } from "@/lib/events/event-bus"
 import { ok, type ActionResult } from "@/lib/errors/action-result"

@@ -1,6 +1,6 @@
-import type { MbtiPercentages } from "@/lib/analysis/mbti-scoring"
-import type { SajuResult } from "@/lib/analysis/saju"
-import type { NameNumerologyResult } from "@/lib/analysis/name-numerology"
+import type { MbtiPercentages } from "@ais/analysis"
+import type { SajuResult } from "@ais/analysis"
+import type { NameNumerologyResult } from "@ais/analysis"
 
 const MBTI_KEYS = ["E", "I", "S", "N", "T", "F", "J", "P"] as const
 

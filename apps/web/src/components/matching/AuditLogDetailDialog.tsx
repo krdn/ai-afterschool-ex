@@ -8,7 +8,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import { Badge } from '@/components/ui/badge'
-import { formatChangesForDiff } from '@/lib/utils/change-formatter'
+import { formatChangesForDiff } from '@ais/shared'
 import type { AuditLogEntry } from '@/lib/actions/admin/audit'
 
 interface AuditLogDetailDialogProps {

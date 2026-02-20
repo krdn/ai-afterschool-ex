@@ -8,7 +8,7 @@ import {
   Radar,
   ResponsiveContainer,
 } from "recharts"
-import type { CompatibilityBreakdown } from "@/lib/analysis/compatibility-scoring"
+import type { CompatibilityBreakdown } from "@ais/analysis"
 
 interface CompatibilityRadarChartProps {
   breakdown: CompatibilityBreakdown

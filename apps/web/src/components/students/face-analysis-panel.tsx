@@ -3,7 +3,7 @@
 import { useState, useTransition, useEffect, useRef, useCallback } from "react"
 import { Camera, Sparkles, AlertCircle, RefreshCw, Loader2, Trash2 } from "lucide-react"
 import { analyzeFaceImage, getFaceAnalysis as getFaceAnalysisAction } from "@/lib/actions/student/ai-image-analysis"
-import { DISCLAIMER_TEXT } from "@/lib/ai/prompts"
+import { DISCLAIMER_TEXT } from "@ais/ai-engine/prompts"
 import type { ProviderName } from "@/lib/ai/providers/types"
 import { ProviderSelector } from "@/components/students/provider-selector"
 import { PromptSelector } from "@/components/students/prompt-selector"

@@ -7,7 +7,7 @@
 import { Prisma } from "@prisma/client"
 import { db } from "@/lib/db"
 import type { Assignment } from "@/lib/optimization/auto-assignment"
-import type { CompatibilityScore } from "@/lib/analysis/compatibility-scoring"
+import type { CompatibilityScore } from "@ais/analysis"
 
 /**
  * AssignmentProposal 요약 타입

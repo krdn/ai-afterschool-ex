@@ -1,4 +1,4 @@
-import { coerceHanjaSelections, selectionsToHanjaName } from '@/lib/analysis/hanja-strokes'
+import { coerceHanjaSelections, selectionsToHanjaName } from '@ais/analysis'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'

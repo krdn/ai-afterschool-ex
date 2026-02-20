@@ -4,7 +4,7 @@ import {
   getCounselingTypeDistributionAction,
   getMonthlyTrendAction,
 } from "@/lib/actions/counseling/stats"
-import { getDateRangeFromPreset } from "@/lib/utils/date-range"
+import { getDateRangeFromPreset } from "@ais/shared"
 import { getFollowUpsAction, getOverdueCountAction } from "@/lib/actions/counseling/follow-up"
 import { getReservationStatsAction } from "@/lib/actions/counseling/reservations-query"
 import { startOfMonth, endOfMonth } from "date-fns"

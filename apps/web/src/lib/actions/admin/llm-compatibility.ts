@@ -6,9 +6,9 @@ import { generateWithProvider } from "@/lib/ai/universal-router"
 import {
   COMPATIBILITY_SYSTEM_PROMPT,
   buildCompatibilityPrompt,
-  type StudentData,
-  type TeacherData,
-} from "@/lib/ai/compatibility-prompts"
+  type CompatibilityStudentData as StudentData,
+  type CompatibilityTeacherData as TeacherData,
+} from "@ais/ai-engine/prompts"
 import type { TeacherRecommendation } from "@/lib/actions/matching/assignment"
 import { fetchSubjectAnalyses, fetchBatchAnalyses } from "@/lib/db/matching/fetch-analysis"
 

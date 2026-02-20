@@ -9,7 +9,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { DatePreset } from "@/types/statistics"
-import { ExtendedDatePreset, PRESET_LABELS, DEFAULT_PRESETS } from "@/lib/utils/date-range"
+import { ExtendedDatePreset, PRESET_LABELS, DEFAULT_PRESETS } from "@ais/shared"
 
 interface DateRangeFilterProps {
   value: string
@@ -87,4 +87,4 @@ export function DateRangeFilter({
 }
 
 // 타입 재내보내기
-export type { ExtendedDatePreset } from '@/lib/utils/date-range'
+export type { ExtendedDatePreset } from '@ais/shared'

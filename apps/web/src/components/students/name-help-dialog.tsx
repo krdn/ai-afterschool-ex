@@ -12,7 +12,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { getPromptOptions } from "@/lib/ai/name-prompts"
+import { getNamePromptOptions as getPromptOptions } from "@ais/ai-engine/prompts"
 
 export function NameHelpDialog() {
   const prompts = getPromptOptions()

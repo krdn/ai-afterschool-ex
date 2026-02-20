@@ -3,8 +3,8 @@
 import { revalidatePath } from "next/cache"
 import { db } from "@/lib/db"
 import { verifySession } from "@/lib/dal"
-import { calculateCompatibilityScore, type CompatibilityScore } from "@/lib/analysis/compatibility-scoring"
-import { calculateFairnessMetrics } from "@/lib/analysis/fairness-metrics"
+import { calculateCompatibilityScore, type CompatibilityScore } from "@ais/analysis"
+import { calculateFairnessMetrics } from "@ais/matching"
 import {
   generateAutoAssignment,
   type Assignment,

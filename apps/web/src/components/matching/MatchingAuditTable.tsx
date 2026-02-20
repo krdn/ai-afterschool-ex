@@ -2,7 +2,7 @@
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { Badge } from '@/components/ui/badge'
-import { formatChangesSummary } from '@/lib/utils/change-formatter'
+import { formatChangesSummary } from '@ais/shared'
 import type { AuditLogEntry } from '@/lib/actions/admin/audit'
 
 interface MatchingAuditTableProps {

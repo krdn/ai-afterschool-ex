@@ -12,7 +12,7 @@ import {
 } from 'recharts'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { DateRangeFilter } from '@/components/statistics/DateRangeFilter'
-import { getDateRangeFromPreset, ExtendedDatePreset, DEFAULT_PRESETS } from '@/lib/utils/date-range'
+import { getDateRangeFromPreset, ExtendedDatePreset, DEFAULT_PRESETS } from '@ais/shared'
 import { DateRange } from '@/types/statistics'
 import { Loader2 } from 'lucide-react'
 

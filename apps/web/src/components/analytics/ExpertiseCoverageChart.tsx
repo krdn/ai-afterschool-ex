@@ -1,6 +1,6 @@
 "use client"
 
-import type { ExpertiseCoverage } from "@/lib/analysis/team-composition-types"
+import type { ExpertiseCoverage } from "@ais/matching"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface ExpertiseCoverageChartProps {

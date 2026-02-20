@@ -1,4 +1,4 @@
-import type { Recommendation } from "@/lib/analysis/team-composition-types"
+import type { Recommendation } from "@ais/matching"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface TeamRecommendationCardProps {
