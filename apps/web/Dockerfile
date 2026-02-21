@@ -53,12 +53,13 @@ RUN pnpm turbo build --filter=@ais/web
 FROM base AS migrate
 WORKDIR /app
 
-COPY --from=builder /app/apps/web/prisma ./apps/web/prisma
-COPY --from=builder /app/apps/web/prisma.config.ts ./apps/web/prisma.config.ts
+COPY --from=builder /app/packages/db/prisma ./packages/db/prisma
+COPY --from=builder /app/packages/db/prisma.config.ts ./packages/db/prisma.config.ts
 COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/apps/web/node_modules ./apps/web/node_modules
+COPY --from=builder /app/packages/db/node_modules ./packages/db/node_modules
+COPY --from=builder /app/packages/db/package.json ./packages/db/package.json
 
-WORKDIR /app/apps/web
+WORKDIR /app/packages/db
 
 CMD ["npx", "prisma", "migrate", "deploy"]
 
@@ -80,7 +81,7 @@ COPY --from=builder --chown=nextjs:nodejs /app/apps/web/.next/static ./apps/web/
 COPY --from=builder --chown=nextjs:nodejs /app/apps/web/public ./apps/web/public
 
 # Prisma 스키마 (런타임 Prisma Client용)
-COPY --from=builder --chown=nextjs:nodejs /app/apps/web/prisma ./apps/web/prisma
+COPY --from=builder --chown=nextjs:nodejs /app/packages/db/prisma ./packages/db/prisma
 
 USER nextjs
 
