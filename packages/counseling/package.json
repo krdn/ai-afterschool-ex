@@ -11,15 +11,15 @@
   },
   "scripts": {
     "build": "tsup",
+    "clean": "rm -rf dist",
     "dev": "tsup --watch",
-    "test": "vitest run --passWithNoTests",
     "lint": "echo 'lint placeholder'",
-    "typecheck": "tsc --noEmit",
-    "clean": "rm -rf dist"
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@ais/shared": "workspace:*",
-    "@ais/db": "workspace:*"
+    "@ais/db": "workspace:*",
+    "@ais/shared": "workspace:*"
   },
   "devDependencies": {
     "tsup": "^8",

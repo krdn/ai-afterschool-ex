@@ -4,26 +4,44 @@
   "type": "module",
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "test": "turbo run test",
-    "test:e2e": "turbo run test:e2e",
-    "typecheck": "turbo run typecheck",
     "clean": "turbo run clean && rm -rf node_modules",
     "db:generate": "turbo run db:generate",
     "db:push": "turbo run db:push",
     "db:seed": "turbo run db:seed",
-    "format": "prettier --write \"**/*.{ts,tsx,md,json}\""
+    "dev": "turbo run dev",
+    "fix:packages": "syncpack fix && syncpack format",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "lint": "turbo run lint",
+    "lint:packages": "syncpack lint",
+    "test": "turbo run test",
+    "test:e2e": "turbo run test:e2e",
+    "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.56.0",
+    "@typescript-eslint/parser": "^8.56.0",
+    "eslint": "^10.0.0",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-boundaries": "^5.4.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-import-x": "^4.16.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "prettier": "^3",
+    "syncpack": "^14.0.0",
     "turbo": "^2",
-    "prettier": "^3"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.0"
   },
   "engines": {
     "node": ">=24"
   },
   "packageManager": "pnpm@10.28.2",
   "pnpm": {
-    "onlyBuiltDependencies": ["esbuild", "sharp", "@prisma/engines", "prisma"]
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp",
+      "@prisma/engines",
+      "prisma"
+    ]
   }
 }

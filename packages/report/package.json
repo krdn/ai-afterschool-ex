@@ -11,18 +11,14 @@
   },
   "scripts": {
     "build": "tsup",
+    "clean": "rm -rf dist",
     "dev": "tsup --watch",
-    "test": "vitest run --passWithNoTests",
     "lint": "echo 'lint placeholder'",
-    "typecheck": "tsc --noEmit",
-    "clean": "rm -rf dist"
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@ais/shared": "workspace:*"
-  },
-  "peerDependencies": {
-    "@react-pdf/renderer": ">=3",
-    "react": ">=18"
   },
   "devDependencies": {
     "@react-pdf/renderer": "^4",
@@ -32,5 +28,9 @@
     "tsup": "^8",
     "typescript": "^5",
     "vitest": "^4"
+  },
+  "peerDependencies": {
+    "@react-pdf/renderer": "^4",
+    "react": "^19"
   }
 }

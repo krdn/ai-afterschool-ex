@@ -23,13 +23,13 @@
   },
   "scripts": {
     "build": "tsup",
-    "dev": "tsup --watch",
-    "lint": "echo 'lint placeholder'",
-    "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
-    "db:seed": "tsx prisma/seed.ts"
+    "db:seed": "tsx prisma/seed.ts",
+    "dev": "tsup --watch",
+    "lint": "echo 'lint placeholder'",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@ais/shared": "workspace:*",

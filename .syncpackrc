@@ -1,0 +1,33 @@
+{
+  "indent": "  ",
+  "sortAz": [
+    "scripts",
+    "dependencies",
+    "devDependencies",
+    "peerDependencies",
+    "resolutions",
+    "overrides"
+  ],
+  "sortFirst": [
+    "name",
+    "version",
+    "description",
+    "author",
+    "license",
+    "private",
+    "type",
+    "main",
+    "types",
+    "exports",
+    "files",
+    "scripts",
+    "dependencies",
+    "devDependencies"
+  ],
+  "versionGroups": [
+    {
+      "dependencies": ["**"],
+      "packages": ["**"]
+    }
+  ]
+}
