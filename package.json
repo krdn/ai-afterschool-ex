@@ -9,10 +9,14 @@
     "db:push": "turbo run db:push",
     "db:seed": "turbo run db:seed",
     "dev": "turbo run dev",
+    "build:docker": "docker build -t ai-afterschool-web:local -f apps/web/Dockerfile --target production .",
+    "build:docker:migrate": "docker build -t ai-afterschool-migrate:local -f apps/web/Dockerfile --target migrate .",
+    "test:deploy": "pnpm build:docker && docker run --rm -p 3000:3000 -e DATABASE_URL=postgresql://dummy:dummy@localhost:5432/dummy -e SESSION_SECRET=local-test-secret-at-least-32-chars ai-afterschool-web:local",
     "fix:packages": "syncpack fix && syncpack format",
     "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
     "lint": "turbo run lint",
     "lint:packages": "syncpack lint",
+    "prepare": "husky",
     "test": "turbo run test",
     "test:e2e": "turbo run test:e2e",
     "typecheck": "turbo run typecheck"
@@ -26,6 +30,8 @@
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-import-x": "^4.16.1",
     "eslint-plugin-react-hooks": "^7.0.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "prettier": "^3",
     "syncpack": "^14.0.0",
     "turbo": "^2",
@@ -42,6 +48,15 @@
       "sharp",
       "@prisma/engines",
       "prisma"
+    ]
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{md,json}": [
+      "prettier --write"
     ]
   }
 }
